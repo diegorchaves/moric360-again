@@ -1,0 +1,5 @@
+mudar a loss
+wspsnr wsssim
+tirar os prints
+implementar a mask full
+otimizar a definicao dos pesos esfer
