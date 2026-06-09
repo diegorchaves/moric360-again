@@ -19,7 +19,7 @@ from torchvision import datasets, transforms
 from lossy_contour_algorithm import get_border_bits
 from models.candidate_train import train_with_candidates
 from models.model import Masked_INR
-from utils.eval_model import eval_model
+from utils.eval_model import compute_ws_mse, eval_model
 
 manual_seed = 1
 
@@ -120,7 +120,10 @@ def train(
 
     vis_colum = 3
     best_psnr = 0
-    criterion = nn.MSELoss().cuda()
+    if args.wsmse_tag == 1:
+        criterion = compute_ws_mse
+    elif args.wsmse_tag == 0:
+        criterion = nn.MSELoss().cuda()
     base_params = [p for name, p in model.named_parameters()]
 
     optim = torch.optim.Adam([{"params": base_params, "lr": args.lr}])
@@ -176,7 +179,10 @@ def train(
             model_output, rate, _ = model(coords)
 
             bits_rate = rate.sum() / (args.all_pix_num)
-            loss_mse = criterion(model_output, pixels)
+
+            out_full = model_output.squeeze(0).view(height, width, 3)
+            target_full = pixels.squeeze(0).view(height, width, 3)
+            loss_mse = criterion(out_full, target_full)
 
             loss = args.lambda_rate * bits_rate + loss_mse
             losses.append(loss.item())
@@ -227,7 +233,9 @@ def train(
             model_output, rate, _ = model(coords)
 
             bits_rate = rate.sum() / (args.all_pix_num)
-            loss_mse = criterion(model_output, pixels)
+            out_full = model_output.squeeze(0).view(height, width, 3)
+            target_full = pixels.squeeze(0).view(height, width, 3)
+            loss_mse = criterion(out_full, target_full)
 
             loss_2 = args.lambda_rate * bits_rate + loss_mse
             losses_2.append(loss_2.item())
@@ -268,12 +276,40 @@ def train(
 
         bits_rate_eval = rate.sum() / (args.all_pix_num)
         bits_rate_eval_num = rate.sum()
-        loss_mse = criterion(model_output, pixels)
-        loss_mse_o = criterion(model_output[:, target_mask, :], pixels1)
-        eval = loss_to_psnr(loss_mse_o.item())
-        print("eval_object_psnr:", eval)
-        loss_mse_b = criterion(model_output[:, ~target_mask, :], pixels2)
-        eval = loss_to_psnr(loss_mse_b.item())
+
+        out_full = model_output.squeeze(0).view(height, width, 3)
+        target_full = pixels.squeeze(0).view(height, width, 3)
+        loss_mse = criterion(out_full, target_full)
+
+        # loss_mse_o = criterion(model_output[:, target_mask, :], pixels1)
+        # eval = loss_to_psnr(loss_mse_o.item())
+        # print("eval_object_psnr:", eval)
+        # loss_mse_b = criterion(model_output[:, ~target_mask, :], pixels2)
+        # eval = loss_to_psnr(loss_mse_b.item())
+
+        # 1. Transformar a máscara achatada de volta para 2D (Altura, Largura)
+        mask_2d = target_mask.view(height, width)
+
+        # 2. AVALIAÇÃO DO OBJETO
+        # Copiamos as imagens e forçamos o fundo a ser idêntico (erro = 0 no fundo)
+        out_obj = out_full.clone()
+        target_obj = target_full.clone()
+        out_obj[~mask_2d] = target_obj[~mask_2d]
+
+        loss_mse_o = criterion(out_obj, target_obj)
+        eval_o = loss_to_psnr(loss_mse_o.item())
+        print("eval_object_psnr:", eval_o)
+
+        # 3. AVALIAÇÃO DO FUNDO (BACKGROUND)
+        # Copiamos as imagens e forçamos o objeto a ser idêntico (erro = 0 no objeto)
+        out_bg = out_full.clone()
+        target_bg = target_full.clone()
+        out_bg[mask_2d] = target_bg[mask_2d]
+
+        loss_mse_b = criterion(out_bg, target_bg)
+        eval_b = loss_to_psnr(loss_mse_b.item())
+        print("eval_background_psnr:", eval_b)
+
         print("eval_background_psnr:", eval)
         psnr_eval = loss_to_psnr(loss_mse.item())
         print(
@@ -345,6 +381,8 @@ parser.add_argument(
 )
 
 parser.add_argument("--mask_type", type=str, default="full")
+
+parser.add_argument("--wsmse_tag", type=int, default="0")
 
 args = parser.parse_args()
 

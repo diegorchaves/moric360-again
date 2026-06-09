@@ -1,5 +1,3 @@
-tirar os prints
-mask erp
 salvar o bitstream
 salvar a decoded img
 mudar a loss
