@@ -1,5 +1,7 @@
+tirar os prints
+mask erp
+salvar o bitstream
+salvar a decoded img
 mudar a loss
 wspsnr wsssim
-tirar os prints
-implementar a mask full
 otimizar a definicao dos pesos esfer

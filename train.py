@@ -81,7 +81,20 @@ def get_mask_h_w(mask_path):
 
 
 def mm(mask_path, h_img, w_img):
-    if args.mask_type != "full":
+    if args.mask_type == "erp":
+        # Polar regions (top 25% and bottom 25%) are foreground (True)
+        # Equatorial region (middle 50%) is background (False)
+        target_mask_4d = torch.ones(1, 1, h_img, w_img, dtype=torch.bool)
+        top = int(h_img * 0.25)
+        bottom = int(h_img * 0.75)
+        target_mask_4d[:, :, top:bottom, :] = False
+        target_mask_flat = target_mask_4d.view(-1)
+
+    elif args.mask_type == "full":
+        target_mask_4d = torch.ones((1, 1, h_img, w_img), dtype=torch.bool)
+        target_mask_flat = target_mask_4d.view(-1)
+
+    elif args.mask_type == "original":
         mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
 
         mask = cv2.resize(mask, (w_img, h_img), interpolation=cv2.INTER_NEAREST)
@@ -90,10 +103,6 @@ def mm(mask_path, h_img, w_img):
 
         target_mask_flat = torch.from_numpy(target_mask.flatten()).bool()
         target_mask_4d = torch.from_numpy(target_mask).unsqueeze(0).unsqueeze(0).bool()
-
-    elif args.mask_type == "full":
-        target_mask_4d = torch.ones((1, 1, h_img, w_img), dtype=torch.bool)
-        target_mask_flat = target_mask_4d.view(-1)
 
     return target_mask_flat, target_mask_4d
 
