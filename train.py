@@ -393,6 +393,10 @@ parser.add_argument(
     help="Directory to save CSV results. If None, CSV is not saved.",
 )
 
+parser.add_argument("--train_steps_1", type=int, default=100000)
+parser.add_argument("--train_steps_2", type=int, default=10000)
+
+
 args = parser.parse_args()
 
 
@@ -522,8 +526,8 @@ for num, lambda_rate in enumerate(args.lambda_rate_list):
             + str(it)
             + ".pth"
         )
-        total_steps = 100000
-        total_steps_2 = 10000
+        total_steps = args.train_steps_1
+        total_steps_2 = args.train_steps_2
         steps_til_summary = 1000
         print("top %:", args.sparsity)
         target_mask_flat = target_mask.flatten()
@@ -689,6 +693,8 @@ for num, lambda_rate in enumerate(args.lambda_rate_list):
                 "eval_border_rate_bits": eval_border_rate_num,
                 "eval_total_rate_bpp": eval_all_rate_y_mlp_latent[-1],
                 "eval_total_rate_bits": eval_all_rate_y_mlp_latent_num[-1],
+                "total_steps_1": args.train_steps_1,
+                "total_steps_2": args.train_steps_2,
             }
             save_metrics_to_csv(args.workdir, metrics_row)
             print(f"Metrics saved to {os.path.join(args.workdir, 'results.csv')}")

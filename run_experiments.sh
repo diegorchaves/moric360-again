@@ -27,6 +27,8 @@ for mask_type in "${MASK_TYPES[@]}"; do
             --mask_type "$mask_type" \
             --wsmse_tag "$wsmse_tag" \
             --workdir "$WORKDIR" \
+            --train_steps_1 100000 \
+            --train_steps_2 10000 \
             > "$LOG" 2>&1
 
         echo "Finished: mask_type=${mask_type}  wsmse_tag=${wsmse_tag}"
