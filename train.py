@@ -1,3 +1,4 @@
+import csv
 import os
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
@@ -197,14 +198,14 @@ def train(
                         "binary mask": None,
                     }
 
-                    print(
-                        "Step %d, BEST PSNR: %0.6f, Total loss %0.6f"
-                        % (step, psnr_this_iter, loss),
-                        "with its rate",
-                        bits_rate.item(),
-                        "latent_bits",
-                        rate.sum().item(),
-                    )
+                    # print(
+                    #     "Step %d, BEST PSNR: %0.6f, Total loss %0.6f"
+                    #     % (step, psnr_this_iter, loss),
+                    #     "with its rate",
+                    #     bits_rate.item(),
+                    #     "latent_bits",
+                    #     rate.sum().item(),
+                    # )
 
             optim.zero_grad()
             loss.backward()
@@ -248,12 +249,12 @@ def train(
                         "model_state_dict": model.state_dict(),
                         "binary mask": None,
                     }
-                    print("Print rate", bits_rate)
-                    print("latent_bits", rate.sum().item())
-                    print(
-                        "Step %d, BEST PSNR: %0.6f, Total loss %0.6f"
-                        % (step, psnr_this_iter, loss_2)
-                    )
+                    # print("Print rate", bits_rate)
+                    # print("latent_bits", rate.sum().item())
+                    # print(
+                    #     "Step %d, BEST PSNR: %0.6f, Total loss %0.6f"
+                    #     % (step, psnr_this_iter, loss_2)
+                    # )
 
             optimizer_stage_2.zero_grad()
             loss_2.backward()
@@ -290,8 +291,8 @@ def train(
         # 1. Transformar a máscara achatada de volta para 2D (Altura, Largura)
         mask_2d = target_mask.view(height, width)
 
-        # 2. AVALIAÇÃO DO OBJETO
-        # Copiamos as imagens e forçamos o fundo a ser idêntico (erro = 0 no fundo)
+    
+        # 2. Copia as imagens e força o fundo a ser idêntico (erro = 0 no fundo)
         out_obj = out_full.clone()
         target_obj = target_full.clone()
         out_obj[~mask_2d] = target_obj[~mask_2d]
@@ -300,8 +301,7 @@ def train(
         eval_o = loss_to_psnr(loss_mse_o.item())
         print("eval_object_psnr:", eval_o)
 
-        # 3. AVALIAÇÃO DO FUNDO (BACKGROUND)
-        # Copiamos as imagens e forçamos o objeto a ser idêntico (erro = 0 no objeto)
+        # Copia as imagens e força o objeto a ser idêntico (erro = 0 no objeto)
         out_bg = out_full.clone()
         target_bg = target_full.clone()
         out_bg[mask_2d] = target_bg[mask_2d]
@@ -310,7 +310,7 @@ def train(
         eval_b = loss_to_psnr(loss_mse_b.item())
         print("eval_background_psnr:", eval_b)
 
-        print("eval_background_psnr:", eval)
+        print("eval_background_psnr:", eval_b)
         psnr_eval = loss_to_psnr(loss_mse.item())
         print(
             "********************Evaluation the Image %d-th, after Step %d, BEST PSNR: %0.6f, Print rate %0.6f. *************************"
@@ -372,7 +372,7 @@ parser.add_argument(
     "--lambda_rate_list",
     type=float,
     nargs="+",
-    default=[1e-3],
+    default=[1e-2, 8.02e-3, 6.04e-3, 4.06e-3, 2.08e-3, 1e-4],
     metavar="LR",
     help="list of lambda weights",
 )
@@ -382,9 +382,31 @@ parser.add_argument(
 
 parser.add_argument("--mask_type", type=str, default="full")
 
-parser.add_argument("--wsmse_tag", type=int, default="0")
+parser.add_argument("--wsmse_tag", type=int, default=0)
+
+parser.add_argument("--swhdc_tag", type=int, default=0)
+
+parser.add_argument(
+    "--workdir",
+    type=str,
+    default=None,
+    help="Directory to save CSV results. If None, CSV is not saved.",
+)
 
 args = parser.parse_args()
+
+
+def save_metrics_to_csv(workdir: str, row: dict):
+    """Append a metrics row to {workdir}/results.csv, creating the file and
+    header on the first call."""
+    os.makedirs(workdir, exist_ok=True)
+    csv_path = os.path.join(workdir, "results.csv")
+    file_exists = os.path.isfile(csv_path)
+    with open(csv_path, "a", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(row.keys()))
+        if not file_exists:
+            writer.writeheader()
+        writer.writerow(row)
 
 if args.type == "kodak":
     traing_list = range(0, 24)
@@ -500,8 +522,8 @@ for num, lambda_rate in enumerate(args.lambda_rate_list):
             + str(it)
             + ".pth"
         )
-        total_steps = 1000
-        total_steps_2 = 1000
+        total_steps = 100000
+        total_steps_2 = 10000
         steps_til_summary = 1000
         print("top %:", args.sparsity)
         target_mask_flat = target_mask.flatten()
@@ -631,6 +653,45 @@ for num, lambda_rate in enumerate(args.lambda_rate_list):
         print(eval_all_psnr)
         print(eval_all_rate_y_mlp_latent)
         print(eval_all_rate_y_mlp_latent_num)
+
+        # ---- CSV logging ----
+        if args.workdir is not None:
+            if args.type == "kodak":
+                image_name = f"kodim{idx_str}"
+            elif args.type == "clic":
+                image_name = f"clic{idx_str}"
+            elif args.type == "other":
+                image_name = f"othim{idx_str}"
+            else:
+                image_name = f"img{idx_str}"
+
+            metrics_row = {
+                "image_name": image_name,
+                "mask_type": args.mask_type,
+                "wsmse_tag": args.wsmse_tag,
+                "swhdc_tag": args.swhdc_tag,
+                "lambda_rate": lambda_rate,
+                # Training metrics
+                "train_psnr": out_psnr,
+                "train_rate_bpp": out_rate,
+                "train_rate_bits": rate_num,
+                # Evaluation metrics
+                "eval_psnr": eval_out_psnr,
+                "eval_y_rate_bpp": eval_y_rate,
+                "eval_y_rate_bits": eval_y_rate_num,
+                "eval_mlp_rate_bpp": eval_network_rate,
+                "eval_mlp_rate_bits": eval_network_rate_num,
+                "eval_arm_rate_bpp": eval_network_rate_arm,
+                "eval_arm_rate_bits": eval_network_rate_arm_num,
+                "eval_conv_rate_bpp": eval_network_rate_conv,
+                "eval_conv_rate_bits": eval_network_rate_conv_num,
+                "eval_border_rate_bpp": eval_border_rate,
+                "eval_border_rate_bits": eval_border_rate_num,
+                "eval_total_rate_bpp": eval_all_rate_y_mlp_latent[-1],
+                "eval_total_rate_bits": eval_all_rate_y_mlp_latent_num[-1],
+            }
+            save_metrics_to_csv(args.workdir, metrics_row)
+            print(f"Metrics saved to {os.path.join(args.workdir, 'results.csv')}")
         print(
             "Current eval Ave PSNR:",
             np.mean(eval_all_psnr),
