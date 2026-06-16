@@ -5,7 +5,6 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 from torch import nn
-
 from utils.quantizemodel import quantize_model
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -28,27 +27,59 @@ seed_everything(1)
 
 
 def compute_ws_mse(img1: torch.Tensor, img2: torch.Tensor) -> torch.Tensor:
+
     height, width, _ = img1.shape
 
-    # Utiliza o mesmo dtype e device das imagens de entrada para evitar conflitos (ex: GPU)
     dtype = img1.dtype
     device = img1.device
 
     phis = torch.arange(height + 1, dtype=dtype, device=device) * torch.pi / height
     deltaTheta = 2 * torch.pi / width
 
-    # Vetorização: substitui o loop for pela diferença direta de slices do tensor
+    # Pesos por linha: shape (H,)
     column = deltaTheta * (-torch.cos(phis[1:]) + torch.cos(phis[:-1]))
 
-    # Adiciona dimensões para (H, 1, 1). O broadcasting do PyTorch aplicará
-    # esses pesos automaticamente para as dimensões de Largura (W) e Canais (C).
+    # Expande para (H, 1, 1) — broadcasting cobre W e C automaticamente
     w = column.view(height, 1, 1)
 
-    # Cálculo vetorizado e com broadcasting
-    mse = ((img1 - img2) ** 2 * w).mean(dim=2)
-    wmse = mse.sum() / (4 * torch.pi)
+    # Soma sobre H e W, mantém canais (C) separados → shape (C,)
+    # Em seguida normaliza por 4π e tira a média dos canais
+    wmse_per_channel = ((img1 - img2) ** 2 * w).sum(dim=(0, 1)) / (4 * torch.pi)
+    return wmse_per_channel.mean()
 
-    return wmse
+
+def compute_ws_psnr(
+    img1: torch.Tensor, img2: torch.Tensor, max_val: float = 1.0
+) -> float:
+
+    # Converte para numpy float64 (igual à referência: float64(img))
+    img1 = img1.detach().cpu().numpy().astype(np.float64)
+    img2 = img2.detach().cpu().numpy().astype(np.float64)
+
+    height, width = img1.shape[0], img1.shape[1]
+
+    # Matriz de pesos esféricos (H, W)
+    phis = np.arange(height + 1) * np.pi / height
+    deltaTheta = 2 * np.pi / width
+    column = np.asarray(
+        [deltaTheta * (-np.cos(phis[j + 1]) + np.cos(phis[j])) for j in range(height)]
+    )
+    w = np.repeat(column[:, np.newaxis], width, axis=1)  # (H, W)
+    w_expanded = w[:, :, np.newaxis]  # (H, W, 1)
+
+    # WS-MSE por canal: soma sobre H e W, normaliza por 4pi -> shape (C,)
+    squared_diff = (img1 - img2) ** 2
+    weighted_squared_diff = squared_diff * w_expanded
+    wmse_three_channel = np.sum(np.sum(weighted_squared_diff, axis=0), axis=0) / (
+        4 * np.pi
+    )
+
+    # Evita log(0)
+    wmse_three_channel = np.where(wmse_three_channel == 0, 1e-10, wmse_three_channel)
+
+    # PSNR por canal, depois média
+    wspsnr_three_channel = 10 * np.log10(max_val**2 / wmse_three_channel)
+    return float(np.mean(wspsnr_three_channel))
 
 
 def loss_to_psnr(loss, max=1):
@@ -133,8 +164,6 @@ def eval_model(target_mask, args, model, binary_mask, dataloader, img_index):
         out_obj[~mask_2d] = target_obj[~mask_2d]
 
         loss_mse_o = criterion(out_obj, target_obj)
-        eval_o = loss_to_psnr(loss_mse_o.item())
-        print("eval_object_psnr:", eval_o)
 
         # 3. AVALIAÇÃO DO FUNDO (BACKGROUND)
         # Copiamos as imagens e forçamos o objeto a ser idêntico (erro = 0 no objeto)
@@ -144,15 +173,11 @@ def eval_model(target_mask, args, model, binary_mask, dataloader, img_index):
 
         loss_mse_b = criterion(out_bg, target_bg)
 
-        out_bg = out_full.clone()
-        target_bg = target_full.clone()
-        out_bg[mask_2d] = target_bg[mask_2d]
-
-        loss_mse_b = criterion(out_bg, target_bg)
-
-        psnr_eval = loss_to_psnr(loss_mse.item())
-        psnr_eval_o = loss_to_psnr(loss_mse_o.item())
-        psnr_eval_b = loss_to_psnr(loss_mse_b.item())
+        # PSNR sempre calculado como WS-PSNR para fins de comparação justa
+        psnr_eval = compute_ws_psnr(out_full, target_full)
+        psnr_eval_o = compute_ws_psnr(out_obj, target_obj)
+        psnr_eval_b = compute_ws_psnr(out_bg, target_bg)
+        print("eval_object_psnr:", psnr_eval_o)
         print("full_image_psnr:", psnr_eval)
         print("object_psnr:", psnr_eval_o)
         print("background_psnr:", psnr_eval_b)

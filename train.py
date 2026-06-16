@@ -20,7 +20,7 @@ from torchvision import datasets, transforms
 from lossy_contour_algorithm import get_border_bits
 from models.candidate_train import train_with_candidates
 from models.model import Masked_INR
-from utils.eval_model import compute_ws_mse, eval_model
+from utils.eval_model import compute_ws_mse, compute_ws_psnr, eval_model
 
 manual_seed = 1
 
@@ -188,7 +188,7 @@ def train(
             loss = args.lambda_rate * bits_rate + loss_mse
             losses.append(loss.item())
             if not step % steps_til_summary or (step == total_steps - 1):
-                psnr_this_iter = loss_to_psnr(loss_mse.item())
+                psnr_this_iter = compute_ws_psnr(out_full, target_full)
 
                 if (loss < best_rd) and (step > 0):
                     best_psnr = psnr_this_iter
@@ -241,7 +241,7 @@ def train(
             loss_2 = args.lambda_rate * bits_rate + loss_mse
             losses_2.append(loss_2.item())
             if not step % steps_til_summary or (step == total_steps_2 - 1):
-                psnr_this_iter = loss_to_psnr(loss_mse.item())
+                psnr_this_iter = compute_ws_psnr(out_full, target_full)
                 if (loss_2 < best_rd_2) and (step > 0):
                     best_psnr_2 = psnr_this_iter
                     best_rd_2 = loss_2
@@ -297,8 +297,7 @@ def train(
         target_obj = target_full.clone()
         out_obj[~mask_2d] = target_obj[~mask_2d]
 
-        loss_mse_o = criterion(out_obj, target_obj)
-        eval_o = loss_to_psnr(loss_mse_o.item())
+        eval_o = compute_ws_psnr(out_obj, target_obj)
         print("eval_object_psnr:", eval_o)
 
         # Copia as imagens e força o objeto a ser idêntico (erro = 0 no objeto)
@@ -307,11 +306,11 @@ def train(
         out_bg[mask_2d] = target_bg[mask_2d]
 
         loss_mse_b = criterion(out_bg, target_bg)
-        eval_b = loss_to_psnr(loss_mse_b.item())
+        eval_b = compute_ws_psnr(out_bg, target_bg)
         print("eval_background_psnr:", eval_b)
 
         print("eval_background_psnr:", eval_b)
-        psnr_eval = loss_to_psnr(loss_mse.item())
+        psnr_eval = compute_ws_psnr(out_full, target_full)
         print(
             "********************Evaluation the Image %d-th, after Step %d, BEST PSNR: %0.6f, Print rate %0.6f. *************************"
             % (img_index, step, psnr_eval, bits_rate_eval.item())
@@ -417,7 +416,7 @@ if args.type == "kodak":
 elif args.type == "clic":
     traing_list = range(0, 41)
 elif args.type == "other":
-    traing_list = range(0, 1)
+    traing_list = range(0, 30)
 
 
 all_psnr_list_of_lists = []

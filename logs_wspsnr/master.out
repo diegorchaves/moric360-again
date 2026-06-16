@@ -1,0 +1,26 @@
+nohup: ignoring input
+========================================
+Starting: mask_type=full  wsmse_tag=0
+Log: ./logs_wspsnr/full_wsmse0.out
+========================================
+Finished: mask_type=full  wsmse_tag=0
+
+========================================
+Starting: mask_type=full  wsmse_tag=1
+Log: ./logs_wspsnr/full_wsmse1.out
+========================================
+Finished: mask_type=full  wsmse_tag=1
+
+========================================
+Starting: mask_type=erp  wsmse_tag=0
+Log: ./logs_wspsnr/erp_wsmse0.out
+========================================
+Finished: mask_type=erp  wsmse_tag=0
+
+========================================
+Starting: mask_type=erp  wsmse_tag=1
+Log: ./logs_wspsnr/erp_wsmse1.out
+========================================
+Finished: mask_type=erp  wsmse_tag=1
+
+All experiments completed. Results in ./experiments_wspsnr/results.csv

@@ -1,0 +1,2 @@
+implemente alguma forma de salvar as métricas calculadas em @contextScopeItemMentionem um arquivo csv. posteriormente, criarei um shell script para rodar vários experimentos, então seria ideal o logger receber um argumento do tipo workdir para salvar nesse local os csvs.
+no csv deve-se ter colunas salvando as métricas, e quero colunas também os argumentos mask_type, wsmse_tag e swhdc_tag. além disso, quero uma coluna image_name indicando o nome da imagem que está rodando

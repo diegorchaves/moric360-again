@@ -6,7 +6,7 @@ import torchvision.utils as vutils
 from torch import nn
 
 from models.model import Masked_INR
-from utils.eval_model import compute_ws_mse
+from utils.eval_model import compute_ws_mse, compute_ws_psnr
 
 
 def train_with_candidates(
@@ -161,7 +161,7 @@ def candidate_train(
             loss = args.lambda_rate * bits_rate + loss_mse
             losses.append(loss.item())
             if not step % steps_til_summary or (step == total_steps):
-                psnr_this_iter = loss_to_psnr(loss_mse.item())
+                psnr_this_iter = compute_ws_psnr(out_full, target_full)
 
                 if (loss < best_rd) and (step > 0):
                     best_rate = bits_rate.item()

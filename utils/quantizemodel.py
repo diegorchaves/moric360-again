@@ -48,10 +48,11 @@ def quantize_model(frame_encoder, binary_mask, coords, frame_gt, args):
     frame_encoder.eval()
     if args.wsmse_tag == 1:
         from utils.eval_model import compute_ws_mse
-
         criterion = compute_ws_mse
     elif args.wsmse_tag == 0:
         criterion = nn.MSELoss().cuda()
+
+    from utils.eval_model import compute_ws_psnr
 
     module_to_quantize = {
         module_name: getattr(frame_encoder, module_name)
@@ -91,7 +92,7 @@ def quantize_model(frame_encoder, binary_mask, coords, frame_gt, args):
             target_full = frame_gt.squeeze(0).view(height, width, 3)
             loss_mse = criterion(out_full, target_full)
 
-            psnr_eval = loss_to_psnr(loss_mse.item())
+            psnr_eval = compute_ws_psnr(out_full, target_full)
             computed_rate = decode_rate.sum() / (coords.shape[1])
 
             param = cur_module.get_param()

@@ -11,12 +11,12 @@ import pandas as pd
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--csv",
-    default="./experiments/results.csv",
+    default="./experiments_wspsnr_30_imgs/results.csv",
     help="Caminho para o CSV com os resultados",
 )
 parser.add_argument(
     "--out",
-    default="./experiments/rd_curve.png",
+    default="./experiments_wspsnr_30_imgs/rd_curve.png",
     help="Caminho para salvar o gráfico gerado",
 )
 args = parser.parse_args()

@@ -1,0 +1,19 @@
+======== ALL Results ========
+Lambda = 0.001:
+  all_psnr: [np.float64(34.44911011288477)]
+  all_rate: [0.48708003759384155]
+  all_rate_num: [255370.21875]
+  eval_all_psnr: [np.float64(34.431168090234024)]
+  eval_all_y_rate: [0.4888237416744232]
+  eval_all_y_rate_num: [256284.421875]
+  eval_all_mlp_rate: [0.029458999633789062]
+  eval_all_mlp_rate_num: [15445.0]
+  eval_all_arm_rate: [0.015268325805664062]
+  eval_all_arm_rate_num: [8005.0]
+  eval_all_conv_rate: [0.013372421264648438]
+  eval_all_conv_rate_num: [7011.0]
+  eval_all_border_rate: [0.0]
+  eval_all_border_rate_num: [0]
+  eval_all_total_rate [[0.5182827413082123]]
+  eval_all_total_rate_num [[271729.421875]]
+---------------------------------
