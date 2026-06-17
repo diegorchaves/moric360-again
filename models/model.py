@@ -108,7 +108,7 @@ class NonAffineBatchNorm(nn.BatchNorm1d):
 
 # =============================================================================
 # SWHDC
-# Substitui nn.Conv2d nos ramos net e global_net quando args.use_swhdc=True.
+# Substitui nn.Conv2d nos ramos net e global_net quando args.swhdc_tag=True.
 # Aplica padding circular na horizontal e reflect na vertical internamente,
 # por isso SynthesisLayer deve desativar seu próprio padding ao usar SWHDC.
 # =============================================================================
@@ -277,11 +277,11 @@ class ModConv(nn.Module):
 # =============================================================================
 # LocallyConnectedBlock
 # Parâmetros novos:
-#   use_swhdc  (bool)  — se True, primeira camada de net e global_net usa SWHDC
-#   dilations  (list)  — lista de dilatações para SWHDC; obrigatório se use_swhdc=True
+#   swhdc_tag  (bool)  — se True, primeira camada de net e global_net usa SWHDC
+#   dilations  (list)  — lista de dilatações para SWHDC; obrigatório se swhdc_tag=True
 #
-# Quando use_swhdc=False o comportamento é idêntico ao original (kernel_size=1).
-# Quando use_swhdc=True  a primeira camada passa para kernel_size=3 com SWHDC,
+# Quando swhdc_tag=False o comportamento é idêntico ao original (kernel_size=1).
+# Quando swhdc_tag=True  a primeira camada passa para kernel_size=3 com SWHDC,
 # residuais seguintes continuam com kernel=1 e nn.Conv2d convencional.
 # =============================================================================
 
@@ -294,19 +294,19 @@ class LocallyConnectedBlock(nn.Module):
         local_hid_channels,
         out_channels,
         mod_layer,
-        use_swhdc: bool = False,
+        swhdc_tag: bool = False,
         dilations: list = None,
     ):
         super().__init__()
 
-        if use_swhdc:
+        if swhdc_tag:
             assert dilations is not None, (
-                "dilations é obrigatório quando use_swhdc=True"
+                "dilations é obrigatório quando swhdc_tag=True"
             )
 
         def make_first_layer(in_ch, out_ch):
             """Primeira camada do ramo: SWHDC ou conv 1×1 convencional."""
-            if use_swhdc:
+            if swhdc_tag:
                 return SynthesisLayer(
                     in_ch,
                     out_ch,
@@ -362,7 +362,7 @@ class LocalGlobalBlock(LocallyConnectedBlock):
         out_channels,
         mod_layer,
         mask,
-        use_swhdc: bool = False,
+        swhdc_tag: bool = False,
         dilations: list = None,
     ):
         super().__init__(
@@ -371,7 +371,7 @@ class LocalGlobalBlock(LocallyConnectedBlock):
             local_hid_channels,
             out_channels,
             mod_layer,
-            use_swhdc=use_swhdc,
+            swhdc_tag=swhdc_tag,
             dilations=dilations,
         )
 
@@ -539,7 +539,7 @@ class Masked_INR(nn.Module):
 
         # ------------------------------------------------------------------
         # Instanciação do LocalGlobalBlock com suporte a SWHDC.
-        # args.use_swhdc   (bool) — ativado via --use_swhdc na linha de comando
+        # args.swhdc_tag   (bool) — ativado via --swhdc_tag na linha de comando
         # args.swhdc_dilations (list[int]) — ex: --swhdc_dilations 1 2 3 4
         # ------------------------------------------------------------------
         self.conv_mod = LocalGlobalBlock(
@@ -549,8 +549,8 @@ class Masked_INR(nn.Module):
             out_channels=hidden_layers + 1,
             mod_layer=args.mod_hid_layer,
             mask=self.target_mask,
-            use_swhdc=args.use_swhdc,
-            dilations=args.swhdc_dilations if args.use_swhdc else None,
+            swhdc_tag=args.swhdc_tag,
+            dilations=args.swhdc_dilations if args.swhdc_tag else None,
         )
 
         self.modules_to_send = ["arm", "conv_mod", "upsampling_2d"]

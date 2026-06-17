@@ -11,12 +11,12 @@ import pandas as pd
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--csv",
-    default="./experiments_wspsnr_30_imgs/results.csv",
+    default="/home/diego/Desktop/moric360-again/experiments_wspsnr_30_img_swhdc/results.csv",
     help="Caminho para o CSV com os resultados",
 )
 parser.add_argument(
     "--out",
-    default="./experiments_wspsnr_30_imgs/rd_curve.png",
+    default="./experiments_wspsnr_30_img_swhdc/rd_curve.png",
     help="Caminho para salvar o gráfico gerado",
 )
 args = parser.parse_args()
@@ -27,10 +27,14 @@ args = parser.parse_args()
 df = pd.read_csv(args.csv)
 
 scenarios = [
-    {"mask_type": "full", "wsmse_tag": 0},
-    {"mask_type": "full", "wsmse_tag": 1},
-    {"mask_type": "erp", "wsmse_tag": 0},
-    {"mask_type": "erp", "wsmse_tag": 1},
+    {"mask_type": "full", "wsmse_tag": 0, "swhdc_tag": 1},
+    {"mask_type": "full", "wsmse_tag": 1, "swhdc_tag": 1},
+    {"mask_type": "erp", "wsmse_tag": 0, "swhdc_tag": 1},
+    {"mask_type": "erp", "wsmse_tag": 1, "swhdc_tag": 1},
+    {"mask_type": "full", "wsmse_tag": 0, "swhdc_tag": 0},
+    {"mask_type": "full", "wsmse_tag": 1, "swhdc_tag": 0},
+    {"mask_type": "erp", "wsmse_tag": 0, "swhdc_tag": 0},
+    {"mask_type": "erp", "wsmse_tag": 1, "swhdc_tag": 0},
 ]
 
 colors = ["#4C8EF7", "#F76C6C", "#4BCB8A", "#F7A84C"]
@@ -45,8 +49,18 @@ fig, ax = plt.subplots(figsize=(8, 5))
 for scenario, color, marker in zip(scenarios, colors, markers):
     mask = scenario["mask_type"]
     wsmse = scenario["wsmse_tag"]
+    swhdc = scenario["swhdc_tag"]  # ← corrigido: era scenario["swhdc"]
 
-    subset = df[(df["mask_type"] == mask) & (df["wsmse_tag"] == wsmse)].copy()
+    subset = df[
+        (df["mask_type"] == mask)
+        & (df["wsmse_tag"] == wsmse)
+        & (df["swhdc_tag"] == swhdc)  # ← novo filtro pela coluna swhdc_tag
+    ].copy()
+
+    if subset.empty:
+        print(f"[aviso] Nenhum dado para mask={mask}, wsmse={wsmse}, swhdc={swhdc}")
+        continue
+
     # Agrega por lambda_rate (média entre imagens caso haja mais de uma)
     subset = (
         subset.groupby("lambda_rate")[["eval_psnr", "eval_total_rate_bpp"]]
@@ -55,7 +69,8 @@ for scenario, color, marker in zip(scenarios, colors, markers):
         .sort_values("eval_total_rate_bpp")
     )
 
-    label = f"mask={mask}, wsmse={wsmse}"
+    label = f"mask={mask}, wsmse={wsmse}, swhdc={swhdc}"
+    # print(label)  # ← swhdc no rótulo
     ax.plot(
         subset["eval_total_rate_bpp"],
         subset["eval_psnr"],
@@ -65,6 +80,11 @@ for scenario, color, marker in zip(scenarios, colors, markers):
         linewidth=2,
         label=label,
     )
+
+print(df["mask_type"].unique())
+print(df["swhdc_tag"].unique())
+print(df["wsmse_tag"].unique())
+
 
 # ---------------------------------------------------------------------------
 # Estética

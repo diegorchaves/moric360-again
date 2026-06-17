@@ -13,13 +13,12 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import torchvision.transforms as transforms
-from torch import nn
-from torch.optim.lr_scheduler import CosineAnnealingLR
-from torchvision import datasets, transforms
-
 from lossy_contour_algorithm import get_border_bits
 from models.candidate_train import train_with_candidates
 from models.model import Masked_INR
+from torch import nn
+from torch.optim.lr_scheduler import CosineAnnealingLR
+from torchvision import datasets, transforms
 from utils.eval_model import compute_ws_mse, compute_ws_psnr, eval_model
 
 manual_seed = 1
@@ -291,7 +290,6 @@ def train(
         # 1. Transformar a máscara achatada de volta para 2D (Altura, Largura)
         mask_2d = target_mask.view(height, width)
 
-    
         # 2. Copia as imagens e força o fundo a ser idêntico (erro = 0 no fundo)
         out_obj = out_full.clone()
         target_obj = target_full.clone()
@@ -384,6 +382,7 @@ parser.add_argument("--mask_type", type=str, default="full")
 parser.add_argument("--wsmse_tag", type=int, default=0)
 
 parser.add_argument("--swhdc_tag", type=int, default=0)
+parser.add_argument("--swhdc_dilations", type=int, nargs="+", default=[1, 2, 3, 4])
 
 parser.add_argument(
     "--workdir",
@@ -410,6 +409,7 @@ def save_metrics_to_csv(workdir: str, row: dict):
         if not file_exists:
             writer.writeheader()
         writer.writerow(row)
+
 
 if args.type == "kodak":
     traing_list = range(0, 24)
