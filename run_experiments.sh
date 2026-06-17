@@ -6,9 +6,9 @@
 
 set -e
 
-WORKDIR="./experiments_wspsnr_30_img_swhdc"
+WORKDIR="./experiments_wspsnr_5_img_swhdc_100k"
 TYPE="other"
-LOGDIR="./logs_wspsnr_30_imgs_swhdc"
+LOGDIR="./logs_wspsnr_5_img_swhdc_100k"
 mkdir -p "$LOGDIR"
 
 MASK_TYPES=("full" "erp")
@@ -28,8 +28,8 @@ for mask_type in "${MASK_TYPES[@]}"; do
             --wsmse_tag "$wsmse_tag" \
             --swhdc_tag 1 \
             --workdir "$WORKDIR" \
-            --train_steps_1 1000 \
-            --train_steps_2 1000 \
+            --train_steps_1 100000 \
+            --train_steps_2 10000 \
             > "$LOG" 2>&1
 
         echo "Finished: mask_type=${mask_type}  wsmse_tag=${wsmse_tag}"

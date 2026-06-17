@@ -1,6 +1,7 @@
 import argparse
 import os
 
+import matplotlib.lines as mlines
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import pandas as pd
@@ -11,13 +12,11 @@ import pandas as pd
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--csv",
-    default="/home/diego/Desktop/moric360-again/experiments_wspsnr_30_img_swhdc/results.csv",
-    help="Caminho para o CSV com os resultados",
+    default="/home/diego/Desktop/moric360-again/experiments_wspsnr_5_img_swhdc_100k/results.csv",
 )
 parser.add_argument(
     "--out",
-    default="./experiments_wspsnr_30_img_swhdc/rd_curve.png",
-    help="Caminho para salvar o gráfico gerado",
+    default="./home/diego/Desktop/moric360-again/experiments_wspsnr_5_img_swhdc_100k/rd_curve.png",
 )
 args = parser.parse_args()
 
@@ -37,31 +36,42 @@ scenarios = [
     {"mask_type": "erp", "wsmse_tag": 1, "swhdc_tag": 0},
 ]
 
-colors = ["#4C8EF7", "#F76C6C", "#4BCB8A", "#F7A84C"]
-markers = ["o", "s", "^", "D"]
+colors = [
+    "#4C8EF7",
+    "#F76C6C",
+    "#4BCB8A",
+    "#F7A84C",  # swhdc=1
+    "#1A4FA0",
+    "#A01A1A",
+    "#1A7A4A",
+    "#A06010",  # swhdc=0 (darker)
+]
+markers = ["o", "s", "^", "D", "o", "s", "^", "D"]
+linestyles = ["-", "-", "-", "-", "--", "--", "--", "--"]
 
 # ---------------------------------------------------------------------------
 # Plot
 # ---------------------------------------------------------------------------
 plt.style.use("seaborn-v0_8-whitegrid")
-fig, ax = plt.subplots(figsize=(8, 5))
+fig, ax = plt.subplots(figsize=(10, 6))
 
-for scenario, color, marker in zip(scenarios, colors, markers):
+legend_handles = []
+
+for scenario, color, marker, ls in zip(scenarios, colors, markers, linestyles):
     mask = scenario["mask_type"]
     wsmse = scenario["wsmse_tag"]
-    swhdc = scenario["swhdc_tag"]  # ← corrigido: era scenario["swhdc"]
+    swhdc = scenario["swhdc_tag"]
 
     subset = df[
         (df["mask_type"] == mask)
         & (df["wsmse_tag"] == wsmse)
-        & (df["swhdc_tag"] == swhdc)  # ← novo filtro pela coluna swhdc_tag
+        & (df["swhdc_tag"] == swhdc)
     ].copy()
 
     if subset.empty:
         print(f"[aviso] Nenhum dado para mask={mask}, wsmse={wsmse}, swhdc={swhdc}")
         continue
 
-    # Agrega por lambda_rate (média entre imagens caso haja mais de uma)
     subset = (
         subset.groupby("lambda_rate")[["eval_psnr", "eval_total_rate_bpp"]]
         .mean()
@@ -70,21 +80,29 @@ for scenario, color, marker in zip(scenarios, colors, markers):
     )
 
     label = f"mask={mask}, wsmse={wsmse}, swhdc={swhdc}"
-    # print(label)  # ← swhdc no rótulo
     ax.plot(
         subset["eval_total_rate_bpp"],
         subset["eval_psnr"],
         color=color,
         marker=marker,
+        linestyle=ls,
         markersize=7,
         linewidth=2,
         label=label,
     )
 
-print(df["mask_type"].unique())
-print(df["swhdc_tag"].unique())
-print(df["wsmse_tag"].unique())
-
+    # Custom handle: shows the actual linestyle + marker in the legend
+    handle = mlines.Line2D(
+        [],
+        [],
+        color=color,
+        marker=marker,
+        linestyle=ls,
+        linewidth=2,
+        markersize=7,
+        label=label,
+    )
+    legend_handles.append(handle)
 
 # ---------------------------------------------------------------------------
 # Estética
@@ -92,7 +110,14 @@ print(df["wsmse_tag"].unique())
 ax.set_xlabel("Total Rate (bpp)", fontsize=12)
 ax.set_ylabel("WS-PSNR (dB)", fontsize=12)
 ax.set_title("Rate-Distortion Curves", fontsize=14, fontweight="bold")
-ax.legend(fontsize=10, framealpha=0.9)
+ax.legend(
+    handles=legend_handles,
+    fontsize=9,
+    framealpha=0.9,
+    loc="lower right",
+    ncol=2,
+    handlelength=2.5,  # wider line sample so dashes are clearly visible
+)
 ax.xaxis.set_major_formatter(ticker.FormatStrFormatter("%.2f"))
 ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.1f"))
 plt.tight_layout()
