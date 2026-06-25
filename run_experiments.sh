@@ -6,13 +6,14 @@
 
 set -e
 
-WORKDIR="./experiments_wspsnr_5_img_swhdc_100k"
+WORKDIR="./experiments_5_img_cen5"
 TYPE="other"
-LOGDIR="./logs_wspsnr_5_img_swhdc_100k"
+LOGDIR="./logs_5_img_cen5"
 mkdir -p "$LOGDIR"
 
-MASK_TYPES=("full" "erp")
-WSMSE_TAGS=(0 1)
+#MASK_TYPES=("full" "erp")
+MASK_TYPES=("erp")
+WSMSE_TAGS=(1)
 
 for mask_type in "${MASK_TYPES[@]}"; do
     for wsmse_tag in "${WSMSE_TAGS[@]}"; do

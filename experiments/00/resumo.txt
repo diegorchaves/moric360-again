@@ -1,0 +1,12 @@
+Esse experimento testou 5 imagens (othim01, othim04, othim07, othim10, othim13) em 512x1024 nos cenários:
+- SWHDC_TAG = (0, 1)
+- WSMSE_TAG = (0, 1)
+- MASK_TYPE = ("full", "erp")
+- LAMBDAS   = [1e-2, 8.02e-3, 6.04e-3, 4.06e-3, 2.08e-3, 1e-4]
+- STEPS_1   = 100k
+- STEPS_2   = 10k
+
+Ao total, foram 240 experimentos.
+Os resultados mostram que nosso cenário ideal (swhdc + wsmse + mask erp) continua sendo um dos melhores, competindo de perto com o (wsmse + mask full). O primeiro supera em bpps mais altos.
+
+Em comparação com o mesmo cenário feito com 10k + 10k steps, houve uma melhora da métrica WS-PSNR.

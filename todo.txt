@@ -1,5 +1,0 @@
-salvar o bitstream
-salvar a decoded img
-mudar a loss
-wspsnr wsssim
-otimizar a definicao dos pesos esfer

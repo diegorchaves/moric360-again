@@ -369,7 +369,8 @@ parser.add_argument(
     "--lambda_rate_list",
     type=float,
     nargs="+",
-    default=[1e-2, 8.02e-3, 6.04e-3, 4.06e-3, 2.08e-3, 1e-4],
+    # default=[1e-2, 8.02e-3, 6.04e-3, 4.06e-3, 2.08e-3, 1e-4],
+    default=[1e-2, 8.02e-3, 6.04e-3],
     metavar="LR",
     help="list of lambda weights",
 )
