@@ -13,12 +13,13 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import torchvision.transforms as transforms
-from lossy_contour_algorithm import get_border_bits
-from models.candidate_train import train_with_candidates
-from models.model import Masked_INR
 from torch import nn
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from torchvision import datasets, transforms
+
+from lossy_contour_algorithm import get_border_bits
+from models.candidate_train import train_with_candidates
+from models.model import Masked_INR
 from utils.eval_model import (
     compute_ws_mse,
     compute_ws_psnr,
@@ -353,7 +354,8 @@ parser.add_argument(
     "--lambda_rate_list",
     type=float,
     nargs="+",
-    default=[1.5e-2, 1.0e-2, 7.0e-3, 5.0e-3, 3.5e-3, 2.5e-3, 1.5e-3, 8.0e-4, 6.0e-4],
+    #default=[6.0e-4, 8.0e-4, 1.5e-3, 2.5e-3, 3.5e-3, 5.0e-3, 7.0e-3, 1.0e-2, 1.5e-2],
+    default=[2.5e-3, 3.5e-3, 5.0e-3, 7.0e-3, 1.0e-2, 1.5e-2]
     # default=[1e-2, 8.02e-3, 6.04e-3],
     metavar="LR",
     help="list of lambda weights",
@@ -370,8 +372,12 @@ parser.add_argument("--swhdc_tag", type=int, default=0)
 parser.add_argument("--swhdc_dilations", type=int, nargs="+", default=[1, 2, 3, 4])
 # ERP-aware padding: circular on horizontal axis (0°/360° wrap), replicate on vertical.
 # Affects Upsampling and SynthesisResidualLayer(kernel_size=3) inside full_net.
-parser.add_argument("--erp_padding", type=int, default=0,
-                    help="1 = circular-H + replicate-V padding (ERP images); 0 = replicate all (default)")
+parser.add_argument(
+    "--erp_padding",
+    type=int,
+    default=0,
+    help="1 = circular-H + replicate-V padding (ERP images); 0 = replicate all (default)",
+)
 
 parser.add_argument(
     "--workdir",
@@ -405,7 +411,7 @@ if args.type == "kodak":
 elif args.type == "clic":
     traing_list = range(0, 41)
 elif args.type == "other":
-    #traing_list = range(0, 13, 3)
+    # traing_list = range(0, 13, 3)
     traing_list = range(0, 1)
 
 
