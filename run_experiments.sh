@@ -1,41 +1,64 @@
 #!/bin/bash
 # run_experiments.sh
-# Runs all combinations of --mask_type and --wsmse_tag sequentially.
+# Executa todas as combinações de mask_type × wsmse_tag × swhdc_tag × erp_padding.
+# Total: 2 × 2 × 2 × 2 = 16 experimentos.
 # Usage: bash run_experiments.sh
-# Logs are saved to logs/<mask_type>_wsmse<tag>.out
+# Logs: experiments/busca_por_lambdas/logs/<mask>_wsmse<w>_swhdc<s>_erp<e>.out
 
-set -e
-
-WORKDIR="./experiments_5_img_cen5"
+WORKDIR="./experiments/erp_padding_test"
 TYPE="other"
-LOGDIR="./logs_5_img_cen5"
+LOGDIR="${WORKDIR}/logs"
 mkdir -p "$LOGDIR"
 
-#MASK_TYPES=("full" "erp")
-MASK_TYPES=("erp")
-WSMSE_TAGS=(1)
+MASK_TYPES=("full" "erp")
+WSMSE_TAGS=(0 1)
+SWHDC_TAGS=(0 1)
+ERP_PADDING_TAGS=(0 1)
+
+TOTAL=$(( ${#MASK_TYPES[@]} * ${#WSMSE_TAGS[@]} * ${#SWHDC_TAGS[@]} * ${#ERP_PADDING_TAGS[@]} ))
+COUNT=0
 
 for mask_type in "${MASK_TYPES[@]}"; do
     for wsmse_tag in "${WSMSE_TAGS[@]}"; do
-        LOG="$LOGDIR/${mask_type}_wsmse${wsmse_tag}_swhdc1.out"
-        echo "========================================"
-        echo "Starting: mask_type=${mask_type}  wsmse_tag=${wsmse_tag}"
-        echo "Log: ${LOG}"
-        echo "========================================"
+        for swhdc_tag in "${SWHDC_TAGS[@]}"; do
+            for erp_padding in "${ERP_PADDING_TAGS[@]}"; do
+                COUNT=$(( COUNT + 1 ))
+                LOG="${LOGDIR}/${mask_type}_wsmse${wsmse_tag}_swhdc${swhdc_tag}_erp${erp_padding}.out"
 
-        nohup python -u train.py \
-            --type "$TYPE" \
-            --mask_type "$mask_type" \
-            --wsmse_tag "$wsmse_tag" \
-            --swhdc_tag 1 \
-            --workdir "$WORKDIR" \
-            --train_steps_1 100000 \
-            --train_steps_2 10000 \
-            > "$LOG" 2>&1
+                echo "========================================"
+                echo "Experiment ${COUNT}/${TOTAL}"
+                echo "  mask_type   = ${mask_type}"
+                echo "  wsmse_tag   = ${wsmse_tag}"
+                echo "  swhdc_tag   = ${swhdc_tag}"
+                echo "  erp_padding = ${erp_padding}"
+                echo "  Log: ${LOG}"
+                echo "========================================"
 
-        echo "Finished: mask_type=${mask_type}  wsmse_tag=${wsmse_tag}"
-        echo ""
+                python -u train.py \
+                    --type "$TYPE" \
+                    --mask_type "$mask_type" \
+                    --wsmse_tag "$wsmse_tag" \
+                    --swhdc_tag "$swhdc_tag" \
+                    --erp_padding "$erp_padding" \
+                    --workdir "$WORKDIR" \
+                    --train_steps_1 1000 \
+                    --train_steps_2 1000 \
+                    > "$LOG" 2>&1
+
+                STATUS=$?
+                if [ $STATUS -eq 0 ]; then
+                    echo "✓ Finished [${COUNT}/${TOTAL}]: mask=${mask_type} wsmse=${wsmse_tag} swhdc=${swhdc_tag} erp=${erp_padding}"
+                else
+                    echo "✗ FAILED   [${COUNT}/${TOTAL}]: mask=${mask_type} wsmse=${wsmse_tag} swhdc=${swhdc_tag} erp=${erp_padding} (exit ${STATUS}) — continuando..."
+                fi
+                echo ""
+            done
+        done
     done
 done
 
-echo "All experiments completed. Results in ${WORKDIR}/results.csv"
+echo "========================================"
+echo "Todos os ${TOTAL} experimentos concluídos."
+echo "Resultados em: ${WORKDIR}/results.csv"
+echo "Logs em:       ${LOGDIR}/"
+echo "========================================"

@@ -1,0 +1,3583 @@
+seed 1
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.00406, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+/home/diego/Desktop/moric360-again/models/candidate_train.py:172: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:838.)
+  "Step %d, BEST PSNR: %0.6f, Total loss %0.6f"
+Step 400, BEST PSNR: 27.464387, Total loss 0.002483 with its rate 0.23666951060295105 latent_bits 124082.984375
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.492293, Total loss 0.002460 with its rate 0.23658889532089233 latent_bits 124040.71875
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.392322, Total loss 0.002539 with its rate 0.2479635328054428 latent_bits 130004.3046875
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.370090, Total loss 0.002563 with its rate 0.247685045003891 latent_bits 129858.296875
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.577436, Total loss 0.002493 with its rate 0.25025588274002075 latent_bits 131206.15625
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.206633, Total loss 0.002630 with its rate 0.24554887413978577 latent_bits 128738.328125
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.564526, Total loss 0.002425 with its rate 0.23287656903266907 latent_bits 122094.390625
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.234808, Total loss 0.002358 with its rate 0.2736733853816986 latent_bits 143483.671875
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.137392, Total loss 0.002365 with its rate 0.2682685852050781 latent_bits 140650.0
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.071279, Total loss 0.002434 with its rate 0.2772076725959778 latent_bits 145336.65625
+
+🏆 Best Candidate Final PSNR: 28.23, Rate: 0.2737
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 0 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 35.92712730932291
+eval_background_psnr: 29.63233580733379
+eval_background_psnr: 29.63233580733379
+********************Evaluation the Image 0-th, after Step 999, BEST PSNR: 28.716700, Print rate 0.177882. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00406_img_object0.pth
+Trained the image with PSNR: 28.716700407759898  latent bits 0.17788182199001312 latent bits number 93261.3046875
+[28.716700407759898]
+[0.17788182199001312]
+[93261.3046875]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00406_img_object0.pth for the  0 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 35.91499279158206
+full_image_psnr: 28.709222998659925
+object_psnr: 35.91499279158206
+background_psnr: 29.62594921865909
+********************Evaluation the Image 0-th, BEST PSNR: 28.709223, Print rate 0.178222, Network rate 0.018024. *************************
+Evaluate the image: PSNR: 28.709222998659925 All bits: 0.19624677300453186  latent bits: 0.17822232842445374  network bits: 0.018024444580078125
+Evaluate arm network bits: 0.00775146484375 Evaluate synthesis network bits: 0.0093231201171875
+Image All bits num: 102889.828125 latent bits num: 93439.828125 mlp bits num: 9450.0 border bits num:
+arm bits num: 4064.0 synthesis bits num: 4888.0
+[28.709222998659925]
+[0.19624677300453186]
+[102889.828125]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 28.709222998659925 Ave Bits 0.19624677300453186
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.00406, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 25.678651, Total loss 0.004882 with its rate 0.5779251456260681 latent_bits 302999.21875
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 25.770978, Total loss 0.004767 with its rate 0.5609196424484253 latent_bits 294083.4375
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 25.748842, Total loss 0.004751 with its rate 0.5585166811943054 latent_bits 292823.59375
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 25.847378, Total loss 0.004577 with its rate 0.5432834029197693 latent_bits 284836.96875
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 25.765067, Total loss 0.004771 with its rate 0.5690985918045044 latent_bits 298371.5625
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 25.614933, Total loss 0.004817 with its rate 0.5524060130119324 latent_bits 289619.84375
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 25.565787, Total loss 0.004943 with its rate 0.573493480682373 latent_bits 300675.75
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 26.498845, Total loss 0.004298 with its rate 0.5624133348464966 latent_bits 294866.5625
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 26.572022, Total loss 0.004278 with its rate 0.5679857134819031 latent_bits 297788.09375
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 26.572324, Total loss 0.004343 with its rate 0.5812461376190186 latent_bits 304740.375
+
+🏆 Best Candidate Final PSNR: 26.57, Rate: 0.5680
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 3 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 33.4782631933403
+eval_background_psnr: 28.203658486946242
+eval_background_psnr: 28.203658486946242
+********************Evaluation the Image 3-th, after Step 999, BEST PSNR: 27.074634, Print rate 0.451106. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00406_img_object3.pth
+Trained the image with PSNR: 27.074633677513976  latent bits 0.45110565423965454 latent bits number 236509.28125
+[28.716700407759898, 27.074633677513976]
+[0.17788182199001312, 0.45110565423965454]
+[93261.3046875, 236509.28125]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00406_img_object3.pth for the  3 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 33.47299677624312
+full_image_psnr: 27.071396516073055
+object_psnr: 33.47299677624312
+background_psnr: 28.201017436059203
+********************Evaluation the Image 3-th, BEST PSNR: 27.071397, Print rate 0.452138, Network rate 0.019203. *************************
+Evaluate the image: PSNR: 27.071396516073055 All bits: 0.471341073513031  latent bits: 0.45213788747787476  network bits: 0.01920318603515625
+Evaluate arm network bits: 0.0076885223388671875 Evaluate synthesis network bits: 0.010667800903320312
+Image All bits num: 247118.46875 latent bits num: 237050.46875 mlp bits num: 10068.0 border bits num:
+arm bits num: 4031.0 synthesis bits num: 5593.0
+[28.709222998659925, 27.071396516073055]
+[0.19624677300453186, 0.471341073513031]
+[102889.828125, 247118.46875]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 27.890309757366488 Ave Bits 0.33379392325878143
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.00406, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.744843, Total loss 0.002201 with its rate 0.22273316979408264 latent_bits 116776.328125
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.387845, Total loss 0.002111 with its rate 0.2446722388267517 latent_bits 128278.71875
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.699203, Total loss 0.002168 with its rate 0.21011599898338318 latent_bits 110161.296875
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.760047, Total loss 0.002291 with its rate 0.23783743381500244 latent_bits 124695.3125
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.885845, Total loss 0.002192 with its rate 0.22569680213928223 latent_bits 118330.125
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.922008, Total loss 0.002077 with its rate 0.2070533037185669 latent_bits 108555.5625
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.776199, Total loss 0.002280 with its rate 0.23847343027591705 latent_bits 125028.7578125
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.194345, Total loss 0.001947 with its rate 0.2512214779853821 latent_bits 131712.40625
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.510544, Total loss 0.001928 with its rate 0.2619391679763794 latent_bits 137331.5625
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.283715, Total loss 0.001963 with its rate 0.2609097361564636 latent_bits 136791.84375
+
+🏆 Best Candidate Final PSNR: 29.51, Rate: 0.2619
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 6 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 38.49035108704394
+eval_background_psnr: 30.928690781535078
+eval_background_psnr: 30.928690781535078
+********************Evaluation the Image 6-th, after Step 999, BEST PSNR: 30.224187, Print rate 0.166389. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00406_img_object6.pth
+Trained the image with PSNR: 30.2241873677922  latent bits 0.16638916730880737 latent bits number 87235.84375
+[28.716700407759898, 27.074633677513976, 30.2241873677922]
+[0.17788182199001312, 0.45110565423965454, 0.16638916730880737]
+[93261.3046875, 236509.28125, 87235.84375]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00406_img_object6.pth for the  6 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 38.474536905911755
+full_image_psnr: 30.215848898085174
+object_psnr: 38.474536905911755
+background_psnr: 30.92170916738546
+********************Evaluation the Image 6-th, BEST PSNR: 30.215849, Print rate 0.166727, Network rate 0.018847. *************************
+Evaluate the image: PSNR: 30.215848898085174 All bits: 0.18557347357273102  latent bits: 0.1667269617319107  network bits: 0.018846511840820312
+Evaluate arm network bits: 0.008756637573242188 Evaluate synthesis network bits: 0.009250640869140625
+Image All bits num: 97293.9453125 latent bits num: 87412.9453125 mlp bits num: 9881.0 border bits num:
+arm bits num: 4591.0 synthesis bits num: 4850.0
+[28.709222998659925, 27.071396516073055, 30.215848898085174]
+[0.19624677300453186, 0.471341073513031, 0.18557347357273102]
+[102889.828125, 247118.46875, 97293.9453125]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 28.66548947093938 Ave Bits 0.28438710669676465
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.00406, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.496616, Total loss 0.002442 with its rate 0.23070088028907776 latent_bits 120953.703125
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.887762, Total loss 0.002269 with its rate 0.22379839420318604 latent_bits 117334.8125
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.599905, Total loss 0.002417 with its rate 0.23795312643051147 latent_bits 124755.96875
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 26.401661, Total loss 0.002915 with its rate 0.22802428901195526 latent_bits 119550.3984375
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.258458, Total loss 0.002472 with its rate 0.21399907767772675 latent_bits 112197.1484375
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 26.510518, Total loss 0.002839 with its rate 0.2274072766304016 latent_bits 119226.90625
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 26.582468, Total loss 0.002940 with its rate 0.256338506937027 latent_bits 134395.203125
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.010883, Total loss 0.002041 with its rate 0.2548462748527527 latent_bits 133612.84375
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.720106, Total loss 0.002213 with its rate 0.27529624104499817 latent_bits 144334.515625
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.823833, Total loss 0.002118 with its rate 0.2590670585632324 latent_bits 135825.75
+
+🏆 Best Candidate Final PSNR: 29.01, Rate: 0.2548
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 9 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 37.858065024156375
+eval_background_psnr: 30.05780826157736
+eval_background_psnr: 30.05780826157736
+********************Evaluation the Image 9-th, after Step 999, BEST PSNR: 29.390382, Print rate 0.159231. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00406_img_object9.pth
+Trained the image with PSNR: 29.39038207427349  latent bits 0.15923120081424713 latent bits number 83483.0078125
+[28.716700407759898, 27.074633677513976, 30.2241873677922, 29.39038207427349]
+[0.17788182199001312, 0.45110565423965454, 0.16638916730880737, 0.15923120081424713]
+[93261.3046875, 236509.28125, 87235.84375, 83483.0078125]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00406_img_object9.pth for the  9 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 37.84715374464943
+full_image_psnr: 29.386765890672052
+object_psnr: 37.84715374464943
+background_psnr: 30.055448332447483
+********************Evaluation the Image 9-th, BEST PSNR: 29.386766, Print rate 0.159406, Network rate 0.020029. *************************
+Evaluate the image: PSNR: 29.386765890672052 All bits: 0.1794348955154419  latent bits: 0.15940582752227783  network bits: 0.020029067993164062
+Evaluate arm network bits: 0.008602142333984375 Evaluate synthesis network bits: 0.010456085205078125
+Image All bits num: 94075.5625 latent bits num: 83574.5625 mlp bits num: 10501.0 border bits num:
+arm bits num: 4510.0 synthesis bits num: 5482.0
+[28.709222998659925, 27.071396516073055, 30.215848898085174, 29.386765890672052]
+[0.19624677300453186, 0.471341073513031, 0.18557347357273102, 0.1794348955154419]
+[102889.828125, 247118.46875, 97293.9453125, 94075.5625]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 28.84580857587255 Ave Bits 0.25814905390143394
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.00406, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.456824, Total loss 0.002035 with its rate 0.21501711010932922 latent_bits 112730.890625
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.230026, Total loss 0.002185 with its rate 0.2284483015537262 latent_bits 119772.703125
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.602086, Total loss 0.002016 with its rate 0.2159539759159088 latent_bits 113222.078125
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 26.520927, Total loss 0.003192 with its rate 0.2174898386001587 latent_bits 114027.3125
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.656214, Total loss 0.001954 with its rate 0.2129172384738922 latent_bits 111629.953125
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.584066, Total loss 0.002363 with its rate 0.21105876564979553 latent_bits 110655.578125
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.476303, Total loss 0.002057 with its rate 0.2193080335855484 latent_bits 114980.5703125
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.470106, Total loss 0.001874 with its rate 0.24019867181777954 latent_bits 125933.28125
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.366741, Total loss 0.001885 with its rate 0.23801732063293457 latent_bits 124789.625
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.309865, Total loss 0.001888 with its rate 0.23605147004127502 latent_bits 123758.953125
+
+🏆 Best Candidate Final PSNR: 29.47, Rate: 0.2402
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 12 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 39.210128245674696
+eval_background_psnr: 30.71192566919463
+eval_background_psnr: 30.71192566919463
+********************Evaluation the Image 12-th, after Step 999, BEST PSNR: 30.133681, Print rate 0.145816. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00406_img_object12.pth
+Trained the image with PSNR: 30.133681379188364  latent bits 0.14581602811813354 latent bits number 76449.59375
+[28.716700407759898, 27.074633677513976, 30.2241873677922, 29.39038207427349, 30.133681379188364]
+[0.17788182199001312, 0.45110565423965454, 0.16638916730880737, 0.15923120081424713, 0.14581602811813354]
+[93261.3046875, 236509.28125, 87235.84375, 83483.0078125, 76449.59375]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00406_img_object12.pth for the  12 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 39.18161002279287
+full_image_psnr: 30.121224337420855
+object_psnr: 39.18161002279287
+background_psnr: 30.70139829824627
+********************Evaluation the Image 12-th, BEST PSNR: 30.121224, Print rate 0.146347, Network rate 0.017651. *************************
+Evaluate the image: PSNR: 30.121224337420855 All bits: 0.16399800777435303  latent bits: 0.14634740352630615  network bits: 0.017650604248046875
+Evaluate arm network bits: 0.007663726806640625 Evaluate synthesis network bits: 0.009252548217773438
+Image All bits num: 85982.1875 latent bits num: 76728.1875 mlp bits num: 9254.0 border bits num:
+arm bits num: 4018.0 synthesis bits num: 4851.0
+[28.709222998659925, 27.071396516073055, 30.215848898085174, 29.386765890672052, 30.121224337420855]
+[0.19624677300453186, 0.471341073513031, 0.18557347357273102, 0.1794348955154419, 0.16399800777435303]
+[102889.828125, 247118.46875, 97293.9453125, 94075.5625, 85982.1875]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 29.100891728182212 Ave Bits 0.23931884467601777
+.......Copmlete all dataset training......
+Ave Training PSNR: 29.107916981305586 Ave Training Bits 0.22008477449417113
+Training PSNR: [28.716700407759898, 27.074633677513976, 30.2241873677922, 29.39038207427349, 30.133681379188364]
+Training rate: [0.17788182199001312, 0.45110565423965454, 0.16638916730880737, 0.15923120081424713, 0.14581602811813354]
+Evalutation: Ave Eval PSNR: 29.100891728182212 Ave Eval all bits: 0.23931884467601777 Ave Eval Bits 0.22056808173656464 Ave Eval Network 0.018750762939453124
+Eval All PSNR: [28.709222998659925, 27.071396516073055, 30.215848898085174, 29.386765890672052, 30.121224337420855]
+Eval All rate [0.19624677300453186, 0.471341073513031, 0.18557347357273102, 0.1794348955154419, 0.16399800777435303]
+Eval Latent rate [0.17822232842445374, 0.45213788747787476, 0.1667269617319107, 0.15940582752227783, 0.14634740352630615]
+Eval MLP rate [0.018024444580078125, 0.01920318603515625, 0.018846511840820312, 0.020029067993164062, 0.017650604248046875]
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.00208, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.125154, Total loss 0.001898 with its rate 0.4045158624649048 latent_bits 212082.8125
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.782863, Total loss 0.001769 with its rate 0.41464176774024963 latent_bits 217391.703125
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.447736, Total loss 0.001825 with its rate 0.4136635661125183 latent_bits 216878.84375
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.993414, Total loss 0.001988 with its rate 0.42870980501174927 latent_bits 224767.40625
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.308416, Total loss 0.001896 with its rate 0.4306420087814331 latent_bits 225780.4375
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.133576, Total loss 0.001942 with its rate 0.4251164495944977 latent_bits 222883.453125
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.475935, Total loss 0.001820 with its rate 0.40486669540405273 latent_bits 212266.75
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.694898, Total loss 0.001624 with its rate 0.4342896342277527 latent_bits 227692.84375
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.651653, Total loss 0.001632 with its rate 0.4332418739795685 latent_bits 227143.515625
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.287029, Total loss 0.001732 with its rate 0.4537546634674072 latent_bits 237898.125
+
+🏆 Best Candidate Final PSNR: 30.69, Rate: 0.4343
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 0 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 38.643560408754276
+eval_background_psnr: 32.44211926063573
+eval_background_psnr: 32.44211926063573
+********************Evaluation the Image 0-th, after Step 999, BEST PSNR: 31.508502, Print rate 0.335766. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00208_img_object0.pth
+Trained the image with PSNR: 31.508502330655904  latent bits 0.3357660174369812 latent bits number 176038.09375
+[31.508502330655904]
+[0.3357660174369812]
+[176038.09375]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00208_img_object0.pth for the  0 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 38.62067459771819
+full_image_psnr: 31.49071269202017
+object_psnr: 38.62067459771819
+background_psnr: 32.42556881771926
+********************Evaluation the Image 0-th, BEST PSNR: 31.490713, Print rate 0.336240, Network rate 0.018232. *************************
+Evaluate the image: PSNR: 31.49071269202017 All bits: 0.354472815990448  latent bits: 0.3362404704093933  network bits: 0.018232345581054688
+Evaluate arm network bits: 0.0076351165771484375 Evaluate synthesis network bits: 0.009870529174804688
+Image All bits num: 185845.84375 latent bits num: 176286.84375 mlp bits num: 9559.0 border bits num:
+arm bits num: 4003.0 synthesis bits num: 5175.0
+[31.49071269202017]
+[0.354472815990448]
+[185845.84375]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 31.49071269202017 Ave Bits 0.354472815990448
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.00208, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.642799, Total loss 0.003476 with its rate 0.8687193989753723 latent_bits 455459.15625
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.679758, Total loss 0.003406 with its rate 0.8395205736160278 latent_bits 440150.5625
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.824812, Total loss 0.003354 with its rate 0.852750301361084 latent_bits 447086.75
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.790858, Total loss 0.003263 with its rate 0.828289806842804 latent_bits 434262.40625
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.680745, Total loss 0.003445 with its rate 0.8740427494049072 latent_bits 458250.125
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.567166, Total loss 0.003466 with its rate 0.8517352342605591 latent_bits 446554.5625
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.145825, Total loss 0.003623 with its rate 0.8568834066390991 latent_bits 449253.6875
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.221830, Total loss 0.003265 with its rate 0.9096049070358276 latent_bits 476894.9375
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.803374, Total loss 0.002945 with its rate 0.8402807712554932 latent_bits 440549.125
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.762655, Total loss 0.002999 with its rate 0.8573952913284302 latent_bits 449522.0625
+
+🏆 Best Candidate Final PSNR: 28.80, Rate: 0.8403
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 3 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 35.807109438987794
+eval_background_psnr: 30.557923939683565
+eval_background_psnr: 30.557923939683565
+********************Evaluation the Image 3-th, after Step 999, BEST PSNR: 29.422913, Print rate 0.747797. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00208_img_object3.pth
+Trained the image with PSNR: 29.422913384961703  latent bits 0.747796893119812 latent bits number 392060.9375
+[31.508502330655904, 29.422913384961703]
+[0.3357660174369812, 0.747796893119812]
+[176038.09375, 392060.9375]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00208_img_object3.pth for the  3 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 35.802451876202646
+full_image_psnr: 29.417734113301034
+object_psnr: 35.802451876202646
+background_psnr: 30.55255476093636
+********************Evaluation the Image 3-th, BEST PSNR: 29.417734, Print rate 0.748965, Network rate 0.018744. *************************
+Evaluate the image: PSNR: 29.417734113301034 All bits: 0.767708420753479  latent bits: 0.7489649057388306  network bits: 0.018743515014648438
+Evaluate arm network bits: 0.0077037811279296875 Evaluate synthesis network bits: 0.0100860595703125
+Image All bits num: 402500.3125 latent bits num: 392673.3125 mlp bits num: 9827.0 border bits num:
+arm bits num: 4039.0 synthesis bits num: 5288.0
+[31.49071269202017, 29.417734113301034]
+[0.354472815990448, 0.767708420753479]
+[185845.84375, 402500.3125]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 30.454223402660602 Ave Bits 0.5610906183719635
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.00208, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.955318, Total loss 0.001553 with its rate 0.35293352603912354 latent_bits 185038.8125
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.902005, Total loss 0.001396 with its rate 0.35696715116500854 latent_bits 187153.59375
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.119256, Total loss 0.001512 with its rate 0.34431618452072144 latent_bits 180520.84375
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.923135, Total loss 0.001842 with its rate 0.3807474970817566 latent_bits 199621.34375
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.171820, Total loss 0.001565 with its rate 0.3722061514854431 latent_bits 195143.21875
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.214176, Total loss 0.001441 with its rate 0.32355380058288574 latent_bits 169635.375
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.181455, Total loss 0.001751 with its rate 0.3662273585796356 latent_bits 192008.609375
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 31.736494, Total loss 0.001277 with its rate 0.35718002915382385 latent_bits 187265.203125
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 31.472807, Total loss 0.001289 with its rate 0.3459048271179199 latent_bits 181353.75
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 31.713314, Total loss 0.001323 with its rate 0.37743204832077026 latent_bits 197883.09375
+
+🏆 Best Candidate Final PSNR: 31.74, Rate: 0.3572
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 6 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 40.28124515141117
+eval_background_psnr: 33.32769439078333
+eval_background_psnr: 33.32769439078333
+********************Evaluation the Image 6-th, after Step 999, BEST PSNR: 32.528714, Print rate 0.264773. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00208_img_object6.pth
+Trained the image with PSNR: 32.52871372888351  latent bits 0.264772891998291 latent bits number 138817.25
+[31.508502330655904, 29.422913384961703, 32.52871372888351]
+[0.3357660174369812, 0.747796893119812, 0.264772891998291]
+[176038.09375, 392060.9375, 138817.25]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00208_img_object6.pth for the  6 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 40.26825879577411
+full_image_psnr: 32.523361575221344
+object_psnr: 40.26825879577411
+background_psnr: 33.323816654464224
+********************Evaluation the Image 6-th, BEST PSNR: 32.523362, Print rate 0.266166, Network rate 0.018879. *************************
+Evaluate the image: PSNR: 32.523361575221344 All bits: 0.28504514694213867  latent bits: 0.26616621017456055  network bits: 0.018878936767578125
+Evaluate arm network bits: 0.0075397491455078125 Evaluate synthesis network bits: 0.010499954223632812
+Image All bits num: 149445.75 latent bits num: 139547.75 mlp bits num: 9898.0 border bits num:
+arm bits num: 3953.0 synthesis bits num: 5505.0
+[31.49071269202017, 29.417734113301034, 32.523361575221344]
+[0.354472815990448, 0.767708420753479, 0.28504514694213867]
+[185845.84375, 402500.3125, 149445.75]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 31.143936126847517 Ave Bits 0.46907546122868854
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.00208, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.657104, Total loss 0.001929 with its rate 0.3660902976989746 latent_bits 191936.75
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.331086, Total loss 0.001708 with its rate 0.3548400402069092 latent_bits 186038.375
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.805424, Total loss 0.001877 with its rate 0.3699636459350586 latent_bits 193967.5
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.540166, Total loss 0.002266 with its rate 0.35019296407699585 latent_bits 183601.96875
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.784123, Total loss 0.001861 with its rate 0.3518623113632202 latent_bits 184477.1875
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.490881, Total loss 0.001748 with its rate 0.383941113948822 latent_bits 201295.71875
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.613385, Total loss 0.002395 with its rate 0.41211310029029846 latent_bits 216065.953125
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.405719, Total loss 0.001489 with its rate 0.3620374798774719 latent_bits 189811.90625
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.429766, Total loss 0.001505 with its rate 0.3717997074127197 latent_bits 194930.125
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.180950, Total loss 0.001541 with its rate 0.36680564284324646 latent_bits 192311.796875
+
+🏆 Best Candidate Final PSNR: 30.41, Rate: 0.3620
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 9 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 39.6440487600046
+eval_background_psnr: 31.62410517453324
+eval_background_psnr: 31.62410517453324
+********************Evaluation the Image 9-th, after Step 999, BEST PSNR: 30.987395, Print rate 0.252440. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00208_img_object9.pth
+Trained the image with PSNR: 30.98739494175847  latent bits 0.2524401843547821 latent bits number 132351.359375
+[31.508502330655904, 29.422913384961703, 32.52871372888351, 30.98739494175847]
+[0.3357660174369812, 0.747796893119812, 0.264772891998291, 0.2524401843547821]
+[176038.09375, 392060.9375, 138817.25, 132351.359375]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00208_img_object9.pth for the  9 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 39.62544276465671
+full_image_psnr: 30.975635425095263
+object_psnr: 39.62544276465671
+background_psnr: 31.6134759599633
+********************Evaluation the Image 9-th, BEST PSNR: 30.975635, Print rate 0.253492, Network rate 0.018137. *************************
+Evaluate the image: PSNR: 30.975635425095263 All bits: 0.27162855863571167  latent bits: 0.2534915804862976  network bits: 0.018136978149414062
+Evaluate arm network bits: 0.0076923370361328125 Evaluate synthesis network bits: 0.009481430053710938
+Image All bits num: 142411.59375 latent bits num: 132902.59375 mlp bits num: 9509.0 border bits num:
+arm bits num: 4033.0 synthesis bits num: 4971.0
+[31.49071269202017, 29.417734113301034, 32.523361575221344, 30.975635425095263]
+[0.354472815990448, 0.767708420753479, 0.28504514694213867, 0.27162855863571167]
+[185845.84375, 402500.3125, 149445.75, 142411.59375]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 31.101860951409453 Ave Bits 0.41971373558044434
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.00208, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.602985, Total loss 0.001461 with its rate 0.34947657585144043 latent_bits 183226.375
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 29.192793, Total loss 0.001795 with its rate 0.3466487526893616 latent_bits 181743.78125
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.585652, Total loss 0.001511 with its rate 0.35938042402267456 latent_bits 188418.84375
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 27.658612, Total loss 0.002673 with its rate 0.35474738478660583 latent_bits 185989.796875
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 30.653317, Total loss 0.001406 with its rate 0.3302987217903137 latent_bits 173171.65625
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 28.768736, Total loss 0.001970 with its rate 0.36025381088256836 latent_bits 188876.75
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 31.077942, Total loss 0.001439 with its rate 0.3684280514717102 latent_bits 193162.40625
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 31.145336, Total loss 0.001497 with its rate 0.40357768535614014 latent_bits 211590.9375
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 31.568200, Total loss 0.001400 with its rate 0.38802802562713623 latent_bits 203438.4375
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 31.606608, Total loss 0.001331 with its rate 0.3634503483772278 latent_bits 190552.65625
+
+🏆 Best Candidate Final PSNR: 31.61, Rate: 0.3635
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 12 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 40.56592370900128
+eval_background_psnr: 33.18024467340714
+eval_background_psnr: 33.18024467340714
+********************Evaluation the Image 12-th, after Step 999, BEST PSNR: 32.446815, Print rate 0.263462. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00208_img_object12.pth
+Trained the image with PSNR: 32.446814932162226  latent bits 0.26346227526664734 latent bits number 138130.109375
+[31.508502330655904, 29.422913384961703, 32.52871372888351, 30.98739494175847, 32.446814932162226]
+[0.3357660174369812, 0.747796893119812, 0.264772891998291, 0.2524401843547821, 0.26346227526664734]
+[176038.09375, 392060.9375, 138817.25, 132351.359375, 138130.109375]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.00208_img_object12.pth for the  12 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 40.51306506802434
+full_image_psnr: 32.42950668672287
+object_psnr: 40.51306506802434
+background_psnr: 33.168588255264126
+********************Evaluation the Image 12-th, BEST PSNR: 32.429507, Print rate 0.263847, Network rate 0.018888. *************************
+Evaluate the image: PSNR: 32.42950668672287 All bits: 0.28273555636405945  latent bits: 0.26384708285331726  network bits: 0.018888473510742188
+Evaluate arm network bits: 0.008726119995117188 Evaluate synthesis network bits: 0.009206771850585938
+Image All bits num: 148234.859375 latent bits num: 138331.859375 mlp bits num: 9903.0 border bits num:
+arm bits num: 4575.0 synthesis bits num: 4827.0
+[31.49071269202017, 29.417734113301034, 32.523361575221344, 30.975635425095263, 32.42950668672287]
+[0.354472815990448, 0.767708420753479, 0.28504514694213867, 0.27162855863571167, 0.28273555636405945]
+[185845.84375, 402500.3125, 149445.75, 142411.59375, 148234.859375]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 31.367390098472136 Ave Bits 0.39231809973716736
+.......Copmlete all dataset training......
+Ave Training PSNR: 31.378867863684366 Ave Training Bits 0.3728476524353027
+Training PSNR: [31.508502330655904, 29.422913384961703, 32.52871372888351, 30.98739494175847, 32.446814932162226]
+Training rate: [0.3357660174369812, 0.747796893119812, 0.264772891998291, 0.2524401843547821, 0.26346227526664734]
+Evalutation: Ave Eval PSNR: 31.367390098472136 Ave Eval all bits: 0.39231809973716736 Ave Eval Bits 0.37374204993247984 Ave Eval Network 0.0185760498046875
+Eval All PSNR: [31.49071269202017, 29.417734113301034, 32.523361575221344, 30.975635425095263, 32.42950668672287]
+Eval All rate [0.354472815990448, 0.767708420753479, 0.28504514694213867, 0.27162855863571167, 0.28273555636405945]
+Eval Latent rate [0.3362404704093933, 0.7489649057388306, 0.26616621017456055, 0.2534915804862976, 0.26384708285331726]
+Eval MLP rate [0.018232345581054688, 0.018743515014648438, 0.018878936767578125, 0.018136978149414062, 0.018888473510742188]
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.0001, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 33.139315, Total loss 0.000565 with its rate 1.2896437644958496 latent_bits 676144.75
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 34.874726, Total loss 0.000432 with its rate 1.3630335330963135 latent_bits 714622.125
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 34.419508, Total loss 0.000462 with its rate 1.3957428932189941 latent_bits 731771.25
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 33.055782, Total loss 0.000582 with its rate 1.3070478439331055 latent_bits 685269.5
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 34.242772, Total loss 0.000496 with its rate 1.5612776279449463 latent_bits 818559.125
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 33.076234, Total loss 0.000583 with its rate 1.4137325286865234 latent_bits 741203.0
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 33.127165, Total loss 0.000559 with its rate 1.251603364944458 latent_bits 656200.625
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 35.964610, Total loss 0.000366 with its rate 1.3967409133911133 latent_bits 732294.5
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 35.904087, Total loss 0.000374 with its rate 1.462132453918457 latent_bits 766578.5
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 36.850361, Total loss 0.000337 with its rate 1.5286836624145508 latent_bits 801470.5
+
+🏆 Best Candidate Final PSNR: 36.85, Rate: 1.5287
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 0 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 44.80648836480643
+eval_background_psnr: 39.48413587219489
+eval_background_psnr: 39.48413587219489
+********************Evaluation the Image 0-th, after Step 999, BEST PSNR: 38.364622, Print rate 1.518200. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.0001_img_object0.pth
+Trained the image with PSNR: 38.36462221366309  latent bits 1.518200159072876 latent bits number 795974.125
+[38.36462221366309]
+[1.518200159072876]
+[795974.125]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.0001_img_object0.pth for the  0 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 44.80325819883001
+full_image_psnr: 38.36254720779674
+object_psnr: 44.80325819883001
+background_psnr: 39.48244598332881
+********************Evaluation the Image 0-th, BEST PSNR: 38.362547, Print rate 1.518789, Network rate 0.023052. *************************
+Evaluate the image: PSNR: 38.36254720779674 All bits: 1.5418410301208496  latent bits: 1.5187888145446777  network bits: 0.023052215576171875
+Evaluate arm network bits: 0.009552001953125 Evaluate synthesis network bits: 0.0123291015625
+Image All bits num: 808368.75 latent bits num: 796282.75 mlp bits num: 12086.0 border bits num:
+arm bits num: 5008.0 synthesis bits num: 6464.0
+[38.36254720779674]
+[1.5418410301208496]
+[808368.75]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 38.36254720779674 Ave Bits 1.5418410301208496
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.0001, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 31.847092, Total loss 0.000947 with its rate 2.295513153076172 latent_bits 1203510.0
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 31.976379, Total loss 0.000943 with its rate 2.453192710876465 latent_bits 1286179.5
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 32.915457, Total loss 0.000819 with its rate 2.496218681335449 latent_bits 1308737.5
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 32.569529, Total loss 0.000788 with its rate 2.2655935287475586 latent_bits 1187823.5
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 32.247250, Total loss 0.000878 with its rate 2.4726624488830566 latent_bits 1296387.25
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 31.799147, Total loss 0.000951 with its rate 2.264195203781128 latent_bits 1187090.375
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 32.180554, Total loss 0.000905 with its rate 2.4734902381896973 latent_bits 1296821.25
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 33.963731, Total loss 0.000652 with its rate 2.4943857192993164 latent_bits 1307776.5
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 36.629848, Total loss 0.000468 with its rate 2.5267958641052246 latent_bits 1324768.75
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 35.218477, Total loss 0.000572 with its rate 2.652947187423706 latent_bits 1390908.375
+
+🏆 Best Candidate Final PSNR: 36.63, Rate: 2.5268
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 3 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I
+********************going into stage II
+eval_object_psnr: 43.40857168074388
+eval_background_psnr: 38.80982527639259
+eval_background_psnr: 38.80982527639259
+********************Evaluation the Image 3-th, after Step 999, BEST PSNR: 37.516207, Print rate 2.572156. *************************
+Saved model at ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.0001_img_object3.pth
+Trained the image with PSNR: 37.51620702888303  latent bits 2.5721564292907715 latent bits number 1348550.75
+[38.36462221366309, 37.51620702888303]
+[1.518200159072876, 2.5721564292907715]
+[795974.125, 1348550.75]
+load the model: ./saved/modbase_7/context_16_arm_mod_16/sparity_0.0/inr_mod_16KODAK_ROI_Global_new_struture_7_12_3_33_orderconcat_operator_0_pw_0.0001_img_object3.pth for the  3 -th image
+********************Evalutation with quantization
+********************Starting quantizing models
+eval_object_psnr: 43.40643571276115
+full_image_psnr: 37.51148925277601
+object_psnr: 43.40643571276115
+background_psnr: 38.80422746172964
+********************Evaluation the Image 3-th, BEST PSNR: 37.511489, Print rate 2.573588, Network rate 0.020546. *************************
+Evaluate the image: PSNR: 37.51148925277601 All bits: 2.5941336154937744  latent bits: 2.573587656021118  network bits: 0.02054595947265625
+Evaluate arm network bits: 0.00836944580078125 Evaluate synthesis network bits: 0.01113128662109375
+Image All bits num: 1360073.125 latent bits num: 1349301.125 mlp bits num: 10772.0 border bits num:
+arm bits num: 4388.0 synthesis bits num: 5836.0
+[38.36254720779674, 37.51148925277601]
+[1.5418410301208496, 2.5941336154937744]
+[808368.75, 1360073.125]
+Metrics saved to ./experiments/02/results.csv
+Current eval Ave PSNR: 37.93701823028637 Ave Bits 2.067987322807312
+Namespace(batch_size=1, lr=0.01, data='../data', sparsity=0.0, local_upsampling_kernel_size=8, upsampling_kernel_size=8, static_upsampling_kernel=False, latent_factor=1, mod_base=7, highest_flag=1, context_arm=16, dim_arm_mod=16, use_candidate=True, type='other', mod_hid_layer=0, sythesis_features=12, hidden_features=64, hidden_layer=2, scale=1, lambda_rate=0.0001, lambda_rate_list=[0.00406, 0.00208, 0.0001], start_index=0, mask_type='erp', wsmse_tag=0, swhdc_tag=0, swhdc_dilations=[1, 2, 3, 4], erp_upsampling=0, erp_phi_ref=30.0, workdir='./experiments/02', train_steps_1=1000, train_steps_2=1000, patch_h=512, patch_w=1024, all_pix_num=524288, eval_pix_num=524288)
+Directory './saved/modbase_7/context_16_arm_mod_16' already exists.
+Directory './saved/modbase_7/context_16_arm_mod_16/sparity_0.0' already exists.
+top %: 0.0
+
+🔁 Stage-1 Training Candidate 1/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 33.409995, Total loss 0.000483 with its rate 1.053278923034668 latent_bits 552221.5
+
+🔁 Stage-1 Training Candidate 2/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 35.957098, Total loss 0.000328 with its rate 1.0964314937591553 latent_bits 574845.875
+
+🔁 Stage-1 Training Candidate 3/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 34.709791, Total loss 0.000406 with its rate 1.0907188653945923 latent_bits 571850.8125
+
+🔁 Stage-1 Training Candidate 4/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 32.250436, Total loss 0.000605 with its rate 1.0885295867919922 latent_bits 570703.0
+
+🔁 Stage-1 Training Candidate 5/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 32.376993, Total loss 0.000584 with its rate 1.1383464336395264 latent_bits 596821.375
+
+🔁 Stage-1 Training Candidate 6/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 35.577483, Total loss 0.000347 with its rate 1.0680605173110962 latent_bits 559971.3125
+
+🔁 Stage-1 Training Candidate 7/7
+Quantizer parameter: encoding gain  16
+total pixel: 524288
+Get Mod with shape torch.Size([1, 1, 8, 16]) at layer: 1
+Get Mod with shape torch.Size([1, 1, 16, 32]) at layer: 2
+Get Mod with shape torch.Size([1, 1, 32, 64]) at layer: 3
+Get Mod with shape torch.Size([1, 1, 64, 128]) at layer: 4
+Get Mod with shape torch.Size([1, 1, 128, 256]) at layer: 5
+Get Mod with shape torch.Size([1, 1, 256, 512]) at layer: 6
+Get Mod with shape torch.Size([1, 1, 512, 1024]) at layer: 7
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 32.014747, Total loss 0.000631 with its rate 1.0750479698181152 latent_bits 563634.75
+
+🌟 Selected Top-3 Candidates by RD cost
+
+🎯 Stage-2 Refining Candidate 1/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 37.381911, Total loss 0.000262 with its rate 1.049123764038086 latent_bits 550043.0
+
+🎯 Stage-2 Refining Candidate 2/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 37.397680, Total loss 0.000260 with its rate 1.0595042705535889 latent_bits 555485.375
+
+🎯 Stage-2 Refining Candidate 3/3
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.3 noise parameter: 2.0
+********************Start from stage I
+Step 400, BEST PSNR: 37.419210, Total loss 0.000266 with its rate 1.1004273891448975 latent_bits 576940.875
+
+🏆 Best Candidate Final PSNR: 37.40, Rate: 1.0595
+Masked_INR(
+  (upsampling_2d): Upsampling(
+    (conv_transpose2d): UpsamplingConvTranspose2d()
+  )
+  (arm): Arm(
+    (mlp): Sequential(
+      (0): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (1): GELU(approximate='none')
+      (2): ArmConv(
+        (conv1_1): Conv1d(16, 16, kernel_size=(1,), stride=(1,))
+      )
+      (3): GELU(approximate='none')
+      (4): ArmConv(
+        (conv1_1): Conv1d(16, 2, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+  (conv_mod): LocalGlobalBlock(
+    (net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (global_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(2, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(3, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): Identity()
+      )
+    )
+    (agg_func): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(18, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(21, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(24, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+    (full_net): Sequential(
+      (0): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(7, 12, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (1): SynthesisLayer(
+        (pad): ReplicationPad2d((0, 0, 0, 0))
+        (conv_layer): Conv2d(12, 3, kernel_size=(1, 1), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (2): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+      (3): SynthesisResidualLayer(
+        (pad): ReplicationPad2d((1, 1, 1, 1))
+        (conv_layer): Conv2d(3, 3, kernel_size=(3, 3), stride=(1, 1))
+        (non_linearity): GELU(approximate='none')
+      )
+    )
+  )
+  (modulation_sf): ParameterList(
+      (0): Parameter containing: [torch.float32 of size 1x1x8x16 (cuda:0)]
+      (1): Parameter containing: [torch.float32 of size 1x1x16x32 (cuda:0)]
+      (2): Parameter containing: [torch.float32 of size 1x1x32x64 (cuda:0)]
+      (3): Parameter containing: [torch.float32 of size 1x1x64x128 (cuda:0)]
+      (4): Parameter containing: [torch.float32 of size 1x1x128x256 (cuda:0)]
+      (5): Parameter containing: [torch.float32 of size 1x1x256x512 (cuda:0)]
+      (6): Parameter containing: [torch.float32 of size 1x1x512x1024 (cuda:0)]
+  )
+)
+train the 6 -th image
+start temperature: 0.3 noise parameter: 2.0
+end temperature: 0.1 noise parameter: 1.0
+********************Start from stage I

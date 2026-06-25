@@ -35,7 +35,8 @@ class UpsamplingConvTranspose2d(nn.Module):
     def __init__(
         self,
         upsampling_kernel_size: int,
-        static_upsampling_kernel: bool
+        static_upsampling_kernel: bool,
+        erp_padding: bool = False,
     ):
        
         super().__init__()
@@ -50,6 +51,9 @@ class UpsamplingConvTranspose2d(nn.Module):
 
         self.upsampling_kernel_size = upsampling_kernel_size
         self.static_upsampling_kernel = static_upsampling_kernel
+        # When True: circular padding on H-axis (360° wrap) + replicate on V-axis.
+        # When False: replicate on all sides (original behaviour).
+        self.erp_padding = erp_padding
 
        
         self.weight = nn.Parameter(
@@ -98,7 +102,16 @@ class UpsamplingConvTranspose2d(nn.Module):
             self.static_kernel if self.static_upsampling_kernel else self.weight
         )
 
-        x_pad = F.pad(x, self.upsampling_padding, mode="replicate")
+        pad_h = self.upsampling_padding[0]  # left / right
+        pad_v = self.upsampling_padding[2]  # top  / bottom
+        if self.erp_padding:
+            # ERP: horizontal axis wraps at 0°/360° → circular;
+            #      vertical axis has no pole continuity → replicate.
+            x_pad = F.pad(x, (pad_h, pad_h, 0, 0), mode="circular")
+            x_pad = F.pad(x_pad, (0, 0, pad_v, pad_v), mode="replicate")
+        else:
+            x_pad = F.pad(x, self.upsampling_padding, mode="replicate")
+
         y_conv = F.conv_transpose2d(x_pad, upsampling_weight, stride=2, output_padding=1)
 
        
@@ -117,14 +130,20 @@ class Upsampling(nn.Module):
    
 
 
-    def __init__(self, upsampling_kernel_size: int, static_upsampling_kernel: bool,highest_flag=1):
+    def __init__(
+        self,
+        upsampling_kernel_size: int,
+        static_upsampling_kernel: bool,
+        highest_flag: int = 1,
+        erp_padding: bool = False,
+    ):
        
         super().__init__()
 
-        self.highest_flag=highest_flag
+        self.highest_flag = highest_flag
 
         self.conv_transpose2d = UpsamplingConvTranspose2d(
-            upsampling_kernel_size, static_upsampling_kernel
+            upsampling_kernel_size, static_upsampling_kernel, erp_padding=erp_padding
         )
 
     def forward(self, decoder_side_latent: List[Tensor], masks: List[Tensor]) -> Tensor:

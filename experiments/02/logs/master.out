@@ -1,0 +1,17 @@
+nohup: ignoring input
+========================================
+Starting: mask_type=full  wsmse_tag=0
+Log: ./experiments/02/logs/full_wsmse0_swhdc0_erpUpsampling0.out
+========================================
+Finished: mask_type=full  wsmse_tag=0
+
+========================================
+Starting: mask_type=full  wsmse_tag=1
+Log: ./experiments/02/logs/full_wsmse1_swhdc0_erpUpsampling0.out
+========================================
+Finished: mask_type=full  wsmse_tag=1
+
+========================================
+Starting: mask_type=erp  wsmse_tag=0
+Log: ./experiments/02/logs/erp_wsmse0_swhdc0_erpUpsampling0.out
+========================================

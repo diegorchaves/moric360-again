@@ -1,0 +1,8 @@
+========================================
+Experiment 1/16
+  mask_type   = full
+  wsmse_tag   = 0
+  swhdc_tag   = 0
+  erp_padding = 0
+  Log: ./experiments/erp_padding_test/logs/full_wsmse0_swhdc0_erp0.out
+========================================

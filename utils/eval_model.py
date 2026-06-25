@@ -26,6 +26,73 @@ def seed_everything(seed=1029):
 seed_everything(1)
 
 
+def weights(H, W, device):
+
+    phis = torch.arange(H + 1, device=device) * torch.pi / H
+    deltaTheta = 2 * torch.pi / W
+
+    column = deltaTheta * (torch.cos(phis[:-1]) - torch.cos(phis[1:]))
+
+    w = column.view(1, H, 1, 1)
+
+    return w
+
+
+def compute_ws_ssim(img1, img2, H, W, K1=0.01, K2=0.03, L=1.0):
+    """
+    Calcula o Weighted Spherical SSIM (WS-SSIM) totalmente otimizado em PyTorch.
+    Suporta tensores no formato (batch_size, H * W, C) vindos da GPU.
+    """
+    B, _, C = img1.shape
+    device = img1.device
+
+    # Redimensiona de (B, H*W, C) para o formato padrão do torch (B, C, H, W)
+    img1_2d = img1.view(B, H, W, C).permute(0, 3, 1, 2)
+    img2_2d = img2.view(B, H, W, C).permute(0, 3, 1, 2)
+
+    # Filtro gaussiano
+    k = 11
+    sigma = 1.5
+    pad = k // 2
+
+    # Cria a janela gaussiana na gpu
+    coords = torch.arange(k, dtype=torch.float32, device=device) - pad
+    grid_x, grid_y = torch.meshgrid(coords, coords, indexing="ij")
+    window = torch.exp(-(grid_x**2 + grid_y**2) / (2.0 * sigma**2))
+    window = (window / window.sum()).view(1, 1, k, k).expand(C, 1, k, k)
+
+    w_base = weights(H, W, device)  # Shape: (1, H, 1, 1)
+    W_2d = w_base.view(H, 1).expand(H, W)
+    Wi = W_2d[pad:-pad, pad:-pad]
+    weight_sum = Wi.sum()
+
+    C1 = (K1 * L) ** 2
+    C2 = (K2 * L) ** 2
+
+    mu1 = F.conv2d(img1_2d, window, groups=C)
+    mu2 = F.conv2d(img2_2d, window, groups=C)
+
+    mu1_sq = mu1.pow(2)
+    mu2_sq = mu2.pow(2)
+    mu1_mu2 = mu1 * mu2
+
+    sigma1_sq = F.conv2d(img1_2d * img1_2d, window, groups=C) - mu1_sq
+    sigma2_sq = F.conv2d(img2_2d * img2_2d, window, groups=C) - mu2_sq
+    sigma12 = F.conv2d(img1_2d * img2_2d, window, groups=C) - mu1_mu2
+
+    numerator = (2 * mu1_mu2 + C1) * (2 * sigma12 + C2)
+    denominator = (mu1_sq + mu2_sq + C1) * (sigma1_sq + sigma2_sq + C2)
+    ssim_map = numerator / denominator
+
+    # Aplicação dos pesos esféricos
+    Wi_expanded = Wi.view(1, 1, Wi.shape[0], Wi.shape[1])
+    weighted_ssim = ssim_map * Wi_expanded
+
+    ssim_per_channel = torch.sum(weighted_ssim, dim=(2, 3)) / weight_sum
+
+    return torch.mean(ssim_per_channel)
+
+
 def compute_ws_mse(img1: torch.Tensor, img2: torch.Tensor) -> torch.Tensor:
 
     height, width, _ = img1.shape

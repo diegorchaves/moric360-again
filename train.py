@@ -19,7 +19,12 @@ from models.model import Masked_INR
 from torch import nn
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from torchvision import datasets, transforms
-from utils.eval_model import compute_ws_mse, compute_ws_psnr, eval_model
+from utils.eval_model import (
+    compute_ws_mse,
+    compute_ws_psnr,
+    compute_ws_ssim,
+    eval_model,
+)
 
 manual_seed = 1
 
@@ -197,15 +202,6 @@ def train(
                         "binary mask": None,
                     }
 
-                    # print(
-                    #     "Step %d, BEST PSNR: %0.6f, Total loss %0.6f"
-                    #     % (step, psnr_this_iter, loss),
-                    #     "with its rate",
-                    #     bits_rate.item(),
-                    #     "latent_bits",
-                    #     rate.sum().item(),
-                    # )
-
             optim.zero_grad()
             loss.backward()
             nn.utils.clip_grad_norm_(
@@ -248,12 +244,6 @@ def train(
                         "model_state_dict": model.state_dict(),
                         "binary mask": None,
                     }
-                    # print("Print rate", bits_rate)
-                    # print("latent_bits", rate.sum().item())
-                    # print(
-                    #     "Step %d, BEST PSNR: %0.6f, Total loss %0.6f"
-                    #     % (step, psnr_this_iter, loss_2)
-                    # )
 
             optimizer_stage_2.zero_grad()
             loss_2.backward()
@@ -280,12 +270,6 @@ def train(
         out_full = model_output.squeeze(0).view(height, width, 3)
         target_full = pixels.squeeze(0).view(height, width, 3)
         loss_mse = criterion(out_full, target_full)
-
-        # loss_mse_o = criterion(model_output[:, target_mask, :], pixels1)
-        # eval = loss_to_psnr(loss_mse_o.item())
-        # print("eval_object_psnr:", eval)
-        # loss_mse_b = criterion(model_output[:, ~target_mask, :], pixels2)
-        # eval = loss_to_psnr(loss_mse_b.item())
 
         # 1. Transformar a máscara achatada de volta para 2D (Altura, Largura)
         mask_2d = target_mask.view(height, width)
@@ -369,8 +353,8 @@ parser.add_argument(
     "--lambda_rate_list",
     type=float,
     nargs="+",
-    # default=[1e-2, 8.02e-3, 6.04e-3, 4.06e-3, 2.08e-3, 1e-4],
-    default=[1e-2, 8.02e-3, 6.04e-3],
+    default=[1.5e-2, 1.0e-2, 7.0e-3, 5.0e-3, 3.5e-3, 2.5e-3, 1.5e-3, 8.0e-4, 6.0e-4],
+    # default=[1e-2, 8.02e-3, 6.04e-3],
     metavar="LR",
     help="list of lambda weights",
 )
@@ -384,6 +368,10 @@ parser.add_argument("--wsmse_tag", type=int, default=0)
 
 parser.add_argument("--swhdc_tag", type=int, default=0)
 parser.add_argument("--swhdc_dilations", type=int, nargs="+", default=[1, 2, 3, 4])
+# ERP-aware padding: circular on horizontal axis (0°/360° wrap), replicate on vertical.
+# Affects Upsampling and SynthesisResidualLayer(kernel_size=3) inside full_net.
+parser.add_argument("--erp_padding", type=int, default=0,
+                    help="1 = circular-H + replicate-V padding (ERP images); 0 = replicate all (default)")
 
 parser.add_argument(
     "--workdir",
@@ -417,7 +405,8 @@ if args.type == "kodak":
 elif args.type == "clic":
     traing_list = range(0, 41)
 elif args.type == "other":
-    traing_list = range(0, 13, 3)
+    #traing_list = range(0, 13, 3)
+    traing_list = range(0, 1)
 
 
 all_psnr_list_of_lists = []
@@ -594,6 +583,50 @@ for num, lambda_rate in enumerate(args.lambda_rate_list):
             eval_network_rate_conv,
             eval_network_rate_conv_num,
         ) = eval_model(target_mask_flat, args, mask_model, binary_mask, dataloader, it)
+
+        # --- Compute WS-SSIM ---
+        # model_output from eval is discarded; re-run a single forward pass
+        # with the loaded (eval-mode) model to get output in (B, H*W, C) format,
+        # which is exactly what compute_ws_ssim expects.
+        img_in_ssim, _ = next(iter(dataloader))
+        H_ssim, W_ssim = img_in_ssim.shape[2], img_in_ssim.shape[3]
+        coords_ssim = get_mgrid(W_ssim // args.scale, H_ssim // args.scale, 2).cuda()
+        with torch.no_grad():
+            model_output_ssim, _, _ = mask_model(coords_ssim)  # (1, H*W, 3)
+        pixels_ssim = (
+            img_in_ssim.permute(0, 2, 3, 1).reshape(1, H_ssim * W_ssim, 3).cuda()
+        )
+        eval_wsssim = compute_ws_ssim(
+            model_output_ssim, pixels_ssim, H_ssim, W_ssim
+        ).item()
+        print(f"eval_wsssim: {eval_wsssim:.6f}")
+        # -----------------------
+
+        # --- Save decoded image ---
+        decoded_img = (
+            model_output_ssim.squeeze(0)  # (1, H*W, 3)  # (H*W, 3)
+            .reshape(H_ssim, W_ssim, 3)  # (H, W, 3)
+            .clamp(0, 1)
+            .detach()
+            .cpu()
+            .numpy()
+        )
+        decoded_img_uint8 = (decoded_img * 255).astype(np.uint8)
+
+        # cv2 expects BGR
+        decoded_img_bgr = cv2.cvtColor(decoded_img_uint8, cv2.COLOR_RGB2BGR)
+
+        if args.workdir is not None:
+            decoded_dir = os.path.join(args.workdir, "decoded_images")
+            os.makedirs(decoded_dir, exist_ok=True)
+            image_name = f"othim{idx_str}"
+            decoded_path = os.path.join(
+                decoded_dir,
+                f"{image_name}_mask{args.mask_type}_wsmse{args.wsmse_tag}_swhdc{args.swhdc_tag}_erp{args.erp_padding}_lambda{lambda_rate}.png",
+            )
+            cv2.imwrite(decoded_path, decoded_img_bgr)
+            print(f"Decoded image saved to {decoded_path}")
+
         eval_all_psnr.append(eval_out_psnr)
         eval_all_y_rate.append(eval_y_rate)
         eval_all_y_rate_num.append(eval_y_rate_num)
@@ -674,6 +707,7 @@ for num, lambda_rate in enumerate(args.lambda_rate_list):
                 "mask_type": args.mask_type,
                 "wsmse_tag": args.wsmse_tag,
                 "swhdc_tag": args.swhdc_tag,
+                "erp_padding": args.erp_padding,
                 "lambda_rate": lambda_rate,
                 # Training metrics
                 "train_psnr": out_psnr,
@@ -681,6 +715,7 @@ for num, lambda_rate in enumerate(args.lambda_rate_list):
                 "train_rate_bits": rate_num,
                 # Evaluation metrics
                 "eval_psnr": eval_out_psnr,
+                "eval_wsssim": eval_wsssim,
                 "eval_y_rate_bpp": eval_y_rate,
                 "eval_y_rate_bits": eval_y_rate_num,
                 "eval_mlp_rate_bpp": eval_network_rate,

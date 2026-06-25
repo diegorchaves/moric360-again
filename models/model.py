@@ -229,6 +229,7 @@ class SynthesisResidualLayer(nn.Module):
         output_ft: int,
         kernel_size: int,
         non_linearity: nn.Module = nn.Identity(),
+        erp_padding: bool = False,
     ):
         super().__init__()
 
@@ -236,7 +237,10 @@ class SynthesisResidualLayer(nn.Module):
             f"Residual layer in/out dim must match. Input = {input_ft}, output = {output_ft}"
         )
 
-        self.pad = nn.ReplicationPad2d(int((kernel_size - 1) / 2))
+        self.erp_padding = erp_padding and (kernel_size > 1)
+        self._pad_size = int((kernel_size - 1) / 2)
+        if not self.erp_padding:
+            self.pad = nn.ReplicationPad2d(self._pad_size)
         self.conv_layer = nn.Conv2d(input_ft, output_ft, kernel_size)
         self.non_linearity = non_linearity
 
@@ -245,7 +249,13 @@ class SynthesisResidualLayer(nn.Module):
             self.conv_layer.bias.data = self.conv_layer.bias.data * 0.0
 
     def forward(self, x: Tensor) -> Tensor:
-        return self.non_linearity(self.conv_layer(self.pad(x)) + x)
+        if self.erp_padding:
+            p = self._pad_size
+            x_pad = F.pad(x, (p, p, 0, 0), mode="circular")
+            x_pad = F.pad(x_pad, (0, 0, p, p), mode="replicate")
+        else:
+            x_pad = self.pad(x)
+        return self.non_linearity(self.conv_layer(x_pad) + x)
 
 
 class ModConv(nn.Module):
@@ -296,6 +306,7 @@ class LocallyConnectedBlock(nn.Module):
         mod_layer,
         swhdc_tag: bool = False,
         dilations: list = None,
+        erp_padding: bool = False,
     ):
         super().__init__()
 
@@ -364,6 +375,7 @@ class LocalGlobalBlock(LocallyConnectedBlock):
         mask,
         swhdc_tag: bool = False,
         dilations: list = None,
+        erp_padding: bool = False,
     ):
         super().__init__(
             in_channels,
@@ -373,6 +385,7 @@ class LocalGlobalBlock(LocallyConnectedBlock):
             mod_layer,
             swhdc_tag=swhdc_tag,
             dilations=dilations,
+            erp_padding=erp_padding,
         )
 
         self.mask = mask
@@ -386,8 +399,8 @@ class LocalGlobalBlock(LocallyConnectedBlock):
         self.full_net = nn.Sequential(
             SynthesisLayer(in_channels, global_hid_channels, 1, nn.GELU()),
             SynthesisLayer(global_hid_channels, 3, 1, nn.GELU()),
-            SynthesisResidualLayer(3, 3, 3, nn.GELU()),
-            SynthesisResidualLayer(3, 3, 3, nn.GELU()),
+            SynthesisResidualLayer(3, 3, 3, nn.GELU(), erp_padding=erp_padding),
+            SynthesisResidualLayer(3, 3, 3, nn.GELU(), erp_padding=erp_padding),
         )
 
     def get_param(self) -> OrderedDict[str, Tensor]:
@@ -491,6 +504,7 @@ class Masked_INR(nn.Module):
             args.local_upsampling_kernel_size,
             args.static_upsampling_kernel,
             args.highest_flag,
+            erp_padding=args.erp_padding,
         )
 
         self.dim_arm = args.dim_arm_mod
@@ -551,6 +565,7 @@ class Masked_INR(nn.Module):
             mask=self.target_mask,
             swhdc_tag=args.swhdc_tag,
             dilations=args.swhdc_dilations if args.swhdc_tag else None,
+            erp_padding=args.erp_padding,
         )
 
         self.modules_to_send = ["arm", "conv_mod", "upsampling_2d"]

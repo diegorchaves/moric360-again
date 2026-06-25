@@ -12,11 +12,11 @@ import pandas as pd
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--csv",
-    default="/home/diego/Desktop/moric360-again/5_imgs_100k_final_results.csv",
+    default="/home/diego/Desktop/moric360-again/experiments/busca_por_lambdas/results.csv",
 )
 parser.add_argument(
     "--out",
-    default="/home/diego/Desktop/moric360-again/rd_curve.png",
+    default="/home/diego/Desktop/moric360-again/experiments/busca_por_lambdas/rd_curve.png",
 )
 args = parser.parse_args()
 
