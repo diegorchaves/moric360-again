@@ -386,6 +386,27 @@ parser.add_argument("--swhdc_tag", type=int, default=0)
 parser.add_argument("--swhdc_dilations", type=int, nargs="+", default=[1, 2, 3, 4])
 
 parser.add_argument(
+    "--erp_upsampling",
+    type=int,
+    default=0,
+    help=(
+        "1 = activa SphericalUpsamplingConvTranspose2d: padding circular na "
+        "horizontal (longitude ERP) e kernel Catmull-Rom inicializado com "
+        "distâncias geodésicas. 0 = comportamento original (default)."
+    ),
+)
+parser.add_argument(
+    "--erp_phi_ref",
+    type=float,
+    default=30.0,
+    help=(
+        "Latitude de referência em graus para inicialização do kernel esférico "
+        "(default: 30). Usar 0 recupera o kernel isotrópico plano. "
+        "Só relevante quando --erp_upsampling 1."
+    ),
+)
+
+parser.add_argument(
     "--workdir",
     type=str,
     default=None,
@@ -674,6 +695,8 @@ for num, lambda_rate in enumerate(args.lambda_rate_list):
                 "mask_type": args.mask_type,
                 "wsmse_tag": args.wsmse_tag,
                 "swhdc_tag": args.swhdc_tag,
+                "erp_upsampling_tag": args.erp_upsampling,
+                "erp_phi_ref": args.erp_phi_ref,
                 "lambda_rate": lambda_rate,
                 # Training metrics
                 "train_psnr": out_psnr,

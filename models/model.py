@@ -487,10 +487,16 @@ class Masked_INR(nn.Module):
         else:
             input_dim = 2
 
+        # erp_upsampling e erp_phi_ref são opcionais — getattr garante
+        # compatibilidade com chamadas que não usam estes flags.
+        _erp_mode = bool(getattr(args, "erp_upsampling", 0))
+        _phi_ref = math.radians(getattr(args, "erp_phi_ref", 30.0))
         self.upsampling_2d = Upsampling(
             args.local_upsampling_kernel_size,
             args.static_upsampling_kernel,
             args.highest_flag,
+            erp_mode=_erp_mode,
+            phi_ref=_phi_ref,
         )
 
         self.dim_arm = args.dim_arm_mod
