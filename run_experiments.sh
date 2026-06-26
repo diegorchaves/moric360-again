@@ -5,7 +5,7 @@
 # Usage: bash run_experiments.sh
 # Logs: experiments/busca_por_lambdas/logs/<mask>_wsmse<w>_swhdc<s>_erp<e>.out
 
-WORKDIR="./experiments/erp_padding_test"
+WORKDIR="./experiments/13"
 TYPE="other"
 LOGDIR="${WORKDIR}/logs"
 mkdir -p "$LOGDIR"
@@ -41,8 +41,8 @@ for mask_type in "${MASK_TYPES[@]}"; do
                     --swhdc_tag "$swhdc_tag" \
                     --erp_padding "$erp_padding" \
                     --workdir "$WORKDIR" \
-                    --train_steps_1 1000 \
-                    --train_steps_2 1000 \
+                    --train_steps_1 50000 \
+                    --train_steps_2 10000 \
                     > "$LOG" 2>&1
 
                 STATUS=$?

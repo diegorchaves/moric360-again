@@ -13,13 +13,12 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import torchvision.transforms as transforms
-from torch import nn
-from torch.optim.lr_scheduler import CosineAnnealingLR
-from torchvision import datasets, transforms
-
 from lossy_contour_algorithm import get_border_bits
 from models.candidate_train import train_with_candidates
 from models.model import Masked_INR
+from torch import nn
+from torch.optim.lr_scheduler import CosineAnnealingLR
+from torchvision import datasets, transforms
 from utils.eval_model import (
     compute_ws_mse,
     compute_ws_psnr,
@@ -355,8 +354,8 @@ parser.add_argument(
     type=float,
     nargs="+",
     # default=[6.0e-4, 8.0e-4, 1.5e-3, 2.5e-3, 3.5e-3, 5.0e-3, 7.0e-3, 1.0e-2, 1.5e-2],
-    default=[6.0e-4, 8.0e-4, 1.5e-3],
-    # default=[1e-2, 8.02e-3, 6.04e-3],
+    # default=[6.0e-4, 8.0e-4, 1.5e-3],
+    default=[2.5e-3, 3.5e-3, 5.0e-3, 7.0e-3, 1.0e-2, 1.5e-2],
     metavar="LR",
     help="list of lambda weights",
 )
