@@ -355,7 +355,7 @@ parser.add_argument(
     type=float,
     nargs="+",
     # default=[6.0e-4, 8.0e-4, 1.5e-3, 2.5e-3, 3.5e-3, 5.0e-3, 7.0e-3, 1.0e-2, 1.5e-2],
-    default=[2.5e-3, 3.5e-3, 5.0e-3, 7.0e-3, 1.0e-2, 1.5e-2],
+    default=[6.0e-4, 8.0e-4, 1.5e-3],
     # default=[1e-2, 8.02e-3, 6.04e-3],
     metavar="LR",
     help="list of lambda weights",
