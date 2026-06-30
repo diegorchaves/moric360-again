@@ -9,30 +9,32 @@ X-axis: mean bpp (eval_total_rate_bpp)
 Y-axis: mean PSNR (eval_psnr)
 """
 
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+import numpy as np
+import pandas as pd
 
 # ── colour palette ──────────────────────────────────────────────────────────
-CLR_OURS     = "#2563EB"   # blue
-CLR_LIC360   = "#DC2626"   # red
-CLR_LICPLUS  = "#16A34A"   # green
-BG_COLOR     = "#FFFFFF"
-GRID_COLOR   = "#D1D5DB"
-TEXT_COLOR   = "#111827"
-PANEL_COLOR  = "#F9FAFB"
+CLR_OURS = "#2563EB"  # blue
+CLR_LIC360 = "#DC2626"  # red
+CLR_LICPLUS = "#16A34A"  # green
+BG_COLOR = "#FFFFFF"
+GRID_COLOR = "#D1D5DB"
+TEXT_COLOR = "#111827"
+PANEL_COLOR = "#F9FAFB"
 
 # ── load data ────────────────────────────────────────────────────────────────
-ours_raw = pd.read_csv("experiments/01/results.csv")
+ours_raw = pd.read_csv(
+    "/home/diego/Desktop/moric360-again/experiments/vcip_consolidated/results.csv"
+)
 ours = ours_raw[
-    (ours_raw["mask_type"] == "erp") &
-    (ours_raw["wsmse_tag"] == 1) &
-    (ours_raw["swhdc_tag"] == 1)
+    (ours_raw["mask_type"] == "erp")
+    & (ours_raw["wsmse_tag"] == 1)
+    & (ours_raw["swhdc_tag"] == 1)
 ].copy()
 
 ref = pd.read_csv("experiments/li/codecs_renamed.csv")
-lic360   = ref[ref["codec"] == "lic360_777965"].copy()
+lic360 = ref[ref["codec"] == "lic360_777965"].copy()
 lic_plus = ref[ref["codec"] == "lic_plus_777974"].copy()
 
 # ── aggregate: mean over images per rate point ───────────────────────────────
@@ -57,14 +59,16 @@ lic_plus_rd = (
 )
 
 # ── plot ─────────────────────────────────────────────────────────────────────
-plt.rcParams.update({
-    "font.family": "DejaVu Sans",
-    "text.color": TEXT_COLOR,
-    "axes.labelcolor": TEXT_COLOR,
-    "xtick.color": TEXT_COLOR,
-    "ytick.color": TEXT_COLOR,
-    "axes.edgecolor": "#9CA3AF",
-})
+plt.rcParams.update(
+    {
+        "font.family": "DejaVu Sans",
+        "text.color": TEXT_COLOR,
+        "axes.labelcolor": TEXT_COLOR,
+        "xtick.color": TEXT_COLOR,
+        "ytick.color": TEXT_COLOR,
+        "axes.edgecolor": "#9CA3AF",
+    }
+)
 
 fig, ax = plt.subplots(figsize=(9, 6), facecolor=BG_COLOR)
 ax.set_facecolor(PANEL_COLOR)
@@ -106,8 +110,9 @@ ax.plot(
 
 ax.set_xlabel("Rate (bpp)", fontsize=13, labelpad=8)
 ax.set_ylabel("WS-PSNR (dB)", fontsize=13, labelpad=8)
-ax.set_title("Rate-Distortion", fontsize=14,
-             fontweight="bold", color=TEXT_COLOR, pad=14)
+ax.set_title(
+    "Rate-Distortion", fontsize=14, fontweight="bold", color=TEXT_COLOR, pad=14
+)
 
 ax.xaxis.set_minor_locator(ticker.AutoMinorLocator(2))
 ax.yaxis.set_minor_locator(ticker.AutoMinorLocator(2))

@@ -3,3 +3,7 @@ saved/
 __pycache__/
 enc/training/__pycache__/
 enc/utils/__pycache__/
+experiments/vcip_diego/decoded_images/
+experiments/vcip_tlts/decoded_images/
+experiments/vcip_tlts/logs/
+experiments/vcip_diego/logs/

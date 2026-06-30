@@ -12,11 +12,11 @@ import pandas as pd
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--csv",
-    default="/home/diego/Desktop/moric360-again/experiments/erp_padding_test/results_combined.csv",
+    default="/home/diego/Desktop/moric360-again/experiments/vcip_consolidated/results.csv",
 )
 parser.add_argument(
     "--out",
-    default="/home/diego/Desktop/moric360-again/experiments/erp_padding_test/rd_curve.png",
+    default="/home/diego/Desktop/moric360-again/experiments/vcip_consolidated/rd_curve.png",
 )
 args = parser.parse_args()
 
