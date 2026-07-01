@@ -26,6 +26,11 @@ from utils.eval_model import (
     compute_ws_ssim,
     eval_model,
 )
+from utils.combined_loss import (
+    compute_combined_loss,
+    LAMBDA_DIST_DEFAULT,
+    LAMBDA_PERCEP_DEFAULT,
+)
 
 manual_seed = 1
 
@@ -126,9 +131,15 @@ def train(
 
     vis_colum = 3
     best_psnr = 0
-    if args.wsmse_tag == 1:
+    if args.loss_type == "combined":
+        # Combined WS-MSE + WS-SSIM loss (new)
+        _ld = args.lambda_dist
+        _lp = args.lambda_percep
+        criterion = lambda i1, i2, ld=_ld, lp=_lp: compute_combined_loss(i1, i2, ld, lp)[0]
+    elif args.loss_type == "wsmse" or args.wsmse_tag == 1:
         criterion = compute_ws_mse
-    elif args.wsmse_tag == 0:
+    else:
+        # default: plain MSELoss (args.loss_type in {None, 'mse'} or wsmse_tag == 0)
         criterion = nn.MSELoss().cuda()
     base_params = [p for name, p in model.named_parameters()]
 
@@ -387,6 +398,31 @@ parser.add_argument(
 
 parser.add_argument("--train_steps_1", type=int, default=100000)
 parser.add_argument("--train_steps_2", type=int, default=10000)
+
+parser.add_argument(
+    "--loss_type",
+    type=str,
+    default=None,
+    choices=["mse", "wsmse", "combined"],
+    help=(
+        "Loss function for training. Overrides --wsmse_tag when set. "
+        "'mse' = plain MSELoss (default when not set and wsmse_tag=0), "
+        "'wsmse' = spherically weighted MSE (same as wsmse_tag=1), "
+        "'combined' = WS-MSE + WS-SSIM (new)."
+    ),
+)
+parser.add_argument(
+    "--lambda_dist",
+    type=float,
+    default=LAMBDA_DIST_DEFAULT,
+    help="Weight for the distortion (WS-MSE) term in combined loss (default ≈ 2.344e-3).",
+)
+parser.add_argument(
+    "--lambda_percep",
+    type=float,
+    default=LAMBDA_PERCEP_DEFAULT,
+    help="Weight for the perceptual (WS-SSIM) term in combined loss (default 1.0).",
+)
 
 
 args = parser.parse_args()
@@ -711,6 +747,11 @@ for num, lambda_rate in enumerate(args.lambda_rate_list):
                 "image_name": image_name,
                 "mask_type": args.mask_type,
                 "wsmse_tag": args.wsmse_tag,
+                "loss_type": args.loss_type if args.loss_type is not None else (
+                    "wsmse" if args.wsmse_tag == 1 else "mse"
+                ),
+                "lambda_dist": args.lambda_dist,
+                "lambda_percep": args.lambda_percep,
                 "swhdc_tag": args.swhdc_tag,
                 "erp_padding": args.erp_padding,
                 "lambda_rate": lambda_rate,

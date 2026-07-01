@@ -46,10 +46,16 @@ def quantize_model(frame_encoder, binary_mask, coords, frame_gt, args):
     width = args.patch_w
 
     frame_encoder.eval()
-    if args.wsmse_tag == 1:
+    loss_type = getattr(args, "loss_type", None)
+    if loss_type == "combined":
+        from utils.combined_loss import compute_combined_loss
+        _ld = args.lambda_dist
+        _lp = args.lambda_percep
+        criterion = lambda i1, i2, ld=_ld, lp=_lp: compute_combined_loss(i1, i2, ld, lp)[0]
+    elif loss_type == "wsmse" or getattr(args, "wsmse_tag", 0) == 1:
         from utils.eval_model import compute_ws_mse
         criterion = compute_ws_mse
-    elif args.wsmse_tag == 0:
+    else:
         criterion = nn.MSELoss().cuda()
 
     from utils.eval_model import compute_ws_psnr

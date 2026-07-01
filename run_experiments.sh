@@ -1,58 +1,68 @@
 #!/bin/bash
 # run_experiments.sh
-# Executa todas as combinações de mask_type × wsmse_tag × swhdc_tag × erp_padding.
-# Total: 2 × 2 × 2 × 2 = 16 experimentos.
 # Usage: bash run_experiments.sh
-# Logs: experiments/busca_por_lambdas/logs/<mask>_wsmse<w>_swhdc<s>_erp<e>.out
+# Logs: ${WORKDIR}/logs/<label>.out
 
-WORKDIR="./experiments/vcip"
+WORKDIR="./experiments/vcip_combined_loss"
 TYPE="other"
 LOGDIR="${WORKDIR}/logs"
 mkdir -p "$LOGDIR"
 
-MASK_TYPES=("full" "erp")
-WSMSE_TAGS=(0 1)
-SWHDC_TAGS=(0 1)
+# ============================================================
+# MODO ATIVO: apenas cenários com loss combined
+# Itera: mask_type × swhdc_tag × erp_padding
+# Total: 2 × 2 × 1 = 4 experimentos
+# ============================================================
+
+MASK_TYPES=("erp")
+SWHDC_TAGS=(1)
 ERP_PADDING_TAGS=(1)
 
-TOTAL=$(( ${#MASK_TYPES[@]} * ${#WSMSE_TAGS[@]} * ${#SWHDC_TAGS[@]} * ${#ERP_PADDING_TAGS[@]} ))
+LOSS_TYPE="combined"
+# Pesos padrão do TF (deixe vazio para usar os defaults do argparse):
+# LAMBDA_DIST="--lambda_dist 2.34375e-3"
+# LAMBDA_PERCEP="--lambda_percep 1.0"
+LAMBDA_DIST=""
+LAMBDA_PERCEP=""
+
+TOTAL=$(( ${#MASK_TYPES[@]} * ${#SWHDC_TAGS[@]} * ${#ERP_PADDING_TAGS[@]} ))
 COUNT=0
 
 for mask_type in "${MASK_TYPES[@]}"; do
-    for wsmse_tag in "${WSMSE_TAGS[@]}"; do
-        for swhdc_tag in "${SWHDC_TAGS[@]}"; do
-            for erp_padding in "${ERP_PADDING_TAGS[@]}"; do
-                COUNT=$(( COUNT + 1 ))
-                LOG="${LOGDIR}/${mask_type}_wsmse${wsmse_tag}_swhdc${swhdc_tag}_erp${erp_padding}.out"
+    for swhdc_tag in "${SWHDC_TAGS[@]}"; do
+        for erp_padding in "${ERP_PADDING_TAGS[@]}"; do
+            COUNT=$(( COUNT + 1 ))
+            LOG="${LOGDIR}/${mask_type}_combined_swhdc${swhdc_tag}_erp${erp_padding}.out"
 
-                echo "========================================"
-                echo "Experiment ${COUNT}/${TOTAL}"
-                echo "  mask_type   = ${mask_type}"
-                echo "  wsmse_tag   = ${wsmse_tag}"
-                echo "  swhdc_tag   = ${swhdc_tag}"
-                echo "  erp_padding = ${erp_padding}"
-                echo "  Log: ${LOG}"
-                echo "========================================"
+            echo "========================================"
+            echo "Experiment ${COUNT}/${TOTAL}"
+            echo "  loss_type   = ${LOSS_TYPE}"
+            echo "  mask_type   = ${mask_type}"
+            echo "  swhdc_tag   = ${swhdc_tag}"
+            echo "  erp_padding = ${erp_padding}"
+            echo "  Log: ${LOG}"
+            echo "========================================"
 
-                python -u train.py \
-                    --type "$TYPE" \
-                    --mask_type "$mask_type" \
-                    --wsmse_tag "$wsmse_tag" \
-                    --swhdc_tag "$swhdc_tag" \
-                    --erp_padding "$erp_padding" \
-                    --workdir "$WORKDIR" \
-                    --train_steps_1 5000 \
-                    --train_steps_2 1000 \
-                    > "$LOG" 2>&1
+            python -u train.py \
+                --type "$TYPE" \
+                --mask_type "$mask_type" \
+                --loss_type "$LOSS_TYPE" \
+                $LAMBDA_DIST \
+                $LAMBDA_PERCEP \
+                --swhdc_tag "$swhdc_tag" \
+                --erp_padding "$erp_padding" \
+                --workdir "$WORKDIR" \
+                --train_steps_1 5000 \
+                --train_steps_2 1000 \
+                > "$LOG" 2>&1
 
-                STATUS=$?
-                if [ $STATUS -eq 0 ]; then
-                    echo "Finished [${COUNT}/${TOTAL}]: mask=${mask_type} wsmse=${wsmse_tag} swhdc=${swhdc_tag} erp=${erp_padding}"
-                else
-                    echo "FAILED   [${COUNT}/${TOTAL}]: mask=${mask_type} wsmse=${wsmse_tag} swhdc=${swhdc_tag} erp=${erp_padding} (exit ${STATUS}) — continuando..."
-                fi
-                echo ""
-            done
+            STATUS=$?
+            if [ $STATUS -eq 0 ]; then
+                echo "Finished [${COUNT}/${TOTAL}]: mask=${mask_type} loss=combined swhdc=${swhdc_tag} erp=${erp_padding}"
+            else
+                echo "FAILED   [${COUNT}/${TOTAL}]: mask=${mask_type} loss=combined swhdc=${swhdc_tag} erp=${erp_padding} (exit ${STATUS}) — continuando..."
+            fi
+            echo ""
         done
     done
 done
@@ -62,3 +72,75 @@ echo "Todos os ${TOTAL} experimentos concluídos."
 echo "Resultados em: ${WORKDIR}/results.csv"
 echo "Logs em:       ${LOGDIR}/"
 echo "========================================"
+
+
+# ============================================================
+# MODO COMPLETO (COMENTADO) — descomente para rodar todos os
+# cenários: mask_type × loss_type × swhdc_tag × erp_padding
+# Total: 2 × 3 × 2 × 2 = 24 experimentos
+# ============================================================
+
+# WORKDIR="./experiments/vcip_full"
+# TYPE="other"
+# LOGDIR="${WORKDIR}/logs"
+# mkdir -p "$LOGDIR"
+#
+# MASK_TYPES=("full" "erp")
+# LOSS_TYPES=("mse" "wsmse" "combined")
+# SWHDC_TAGS=(0 1)
+# ERP_PADDING_TAGS=(0 1)
+#
+# TOTAL=$(( ${#MASK_TYPES[@]} * ${#LOSS_TYPES[@]} * ${#SWHDC_TAGS[@]} * ${#ERP_PADDING_TAGS[@]} ))
+# COUNT=0
+#
+# for mask_type in "${MASK_TYPES[@]}"; do
+#     for loss_type in "${LOSS_TYPES[@]}"; do
+#         for swhdc_tag in "${SWHDC_TAGS[@]}"; do
+#             for erp_padding in "${ERP_PADDING_TAGS[@]}"; do
+#                 COUNT=$(( COUNT + 1 ))
+#                 LOG="${LOGDIR}/${mask_type}_${loss_type}_swhdc${swhdc_tag}_erp${erp_padding}.out"
+#
+#                 # Mapeia loss_type → wsmse_tag para backward compat no nome do arquivo de imagem
+#                 case "$loss_type" in
+#                     wsmse)   WSMSE_TAG=1 ;;
+#                     *)       WSMSE_TAG=0 ;;
+#                 esac
+#
+#                 echo "========================================"
+#                 echo "Experiment ${COUNT}/${TOTAL}"
+#                 echo "  loss_type   = ${loss_type}"
+#                 echo "  mask_type   = ${mask_type}"
+#                 echo "  swhdc_tag   = ${swhdc_tag}"
+#                 echo "  erp_padding = ${erp_padding}"
+#                 echo "  Log: ${LOG}"
+#                 echo "========================================"
+#
+#                 python -u train.py \
+#                     --type "$TYPE" \
+#                     --mask_type "$mask_type" \
+#                     --loss_type "$loss_type" \
+#                     --wsmse_tag "$WSMSE_TAG" \
+#                     --swhdc_tag "$swhdc_tag" \
+#                     --erp_padding "$erp_padding" \
+#                     --workdir "$WORKDIR" \
+#                     --train_steps_1 100000 \
+#                     --train_steps_2 10000 \
+#                     > "$LOG" 2>&1
+#
+#                 STATUS=$?
+#                 if [ $STATUS -eq 0 ]; then
+#                     echo "Finished [${COUNT}/${TOTAL}]: mask=${mask_type} loss=${loss_type} swhdc=${swhdc_tag} erp=${erp_padding}"
+#                 else
+#                     echo "FAILED   [${COUNT}/${TOTAL}]: mask=${mask_type} loss=${loss_type} swhdc=${swhdc_tag} erp=${erp_padding} (exit ${STATUS}) — continuando..."
+#                 fi
+#                 echo ""
+#             done
+#         done
+#     done
+# done
+#
+# echo "========================================"
+# echo "Todos os ${TOTAL} experimentos concluídos."
+# echo "Resultados em: ${WORKDIR}/results.csv"
+# echo "Logs em:       ${LOGDIR}/"
+# echo "========================================"

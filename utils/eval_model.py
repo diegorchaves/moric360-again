@@ -185,9 +185,15 @@ def get_mgrid(w_sidelen, h_sidelen, dim=2):
 
 def eval_model(target_mask, args, model, binary_mask, dataloader, img_index):
 
-    if args.wsmse_tag == 1:
+    loss_type = getattr(args, "loss_type", None)
+    if loss_type == "combined":
+        from utils.combined_loss import compute_combined_loss
+        _ld = getattr(args, "lambda_dist", 0.75 * 0.1 * (2.0 ** -5))
+        _lp = getattr(args, "lambda_percep", 1.0)
+        criterion = lambda i1, i2, ld=_ld, lp=_lp: compute_combined_loss(i1, i2, ld, lp)[0]
+    elif loss_type == "wsmse" or getattr(args, "wsmse_tag", 0) == 1:
         criterion = compute_ws_mse
-    elif args.wsmse_tag == 0:
+    else:
         criterion = nn.MSELoss().cuda()
 
     for batch_idx, (img_in, _) in enumerate(dataloader, 0):
