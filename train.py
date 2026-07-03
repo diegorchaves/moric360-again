@@ -410,7 +410,7 @@ if args.type == "kodak":
 elif args.type == "clic":
     traing_list = range(0, 41)
 elif args.type == "other":
-    traing_list = range(0, 30)
+    traing_list = [18]
     # traing_list = range(0, 1)
 
 
