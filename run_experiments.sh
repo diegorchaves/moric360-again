@@ -3,7 +3,7 @@
 # Usage: bash run_experiments.sh
 # Logs: ${WORKDIR}/logs/<label>.out
 
-WORKDIR="./experiments/vcip_combined_loss"
+WORKDIR="./experiments/vcip_othim19_bpp_busca_1"
 TYPE="other"
 LOGDIR="${WORKDIR}/logs"
 mkdir -p "$LOGDIR"
@@ -18,12 +18,14 @@ MASK_TYPES=("erp")
 SWHDC_TAGS=(1)
 ERP_PADDING_TAGS=(1)
 
-LOSS_TYPE="combined"
+LOSS_TYPE="wsmse"
 # Pesos padrão do TF (deixe vazio para usar os defaults do argparse):
 # LAMBDA_DIST="--lambda_dist 2.34375e-3"
 # LAMBDA_PERCEP="--lambda_percep 1.0"
 LAMBDA_DIST=""
 LAMBDA_PERCEP=""
+
+LAMBDA_RATE_LIST=(0.020)
 
 TOTAL=$(( ${#MASK_TYPES[@]} * ${#SWHDC_TAGS[@]} * ${#ERP_PADDING_TAGS[@]} ))
 COUNT=0
@@ -54,6 +56,7 @@ for mask_type in "${MASK_TYPES[@]}"; do
                 --workdir "$WORKDIR" \
                 --train_steps_1 5000 \
                 --train_steps_2 1000 \
+                --lambda_rate_list "${LAMBDA_RATE_LIST[@]}" \
                 > "$LOG" 2>&1
 
             STATUS=$?

@@ -421,6 +421,7 @@ class LocalGlobalBlock(LocallyConnectedBlock):
             ~self.mask.expand_as(coordinate)
         ]
 
+
         all_outputs = []
         out_full = []
 

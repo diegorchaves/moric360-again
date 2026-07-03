@@ -264,3 +264,63 @@ Todos os 8 experimentos concluídos.
 Resultados em: ./experiments/vcip/results.csv
 Logs em:       ./experiments/vcip/logs/
 ========================================
+========================================
+Experiment 1/1
+  loss_type   = combined
+  mask_type   = erp
+  swhdc_tag   = 1
+  erp_padding = 1
+  Log: ./experiments/vcip_combined_loss/logs/erp_combined_swhdc1_erp1.out
+========================================
+Finished [1/1]: mask=erp loss=combined swhdc=1 erp=1
+
+========================================
+Todos os 1 experimentos concluídos.
+Resultados em: ./experiments/vcip_combined_loss/results.csv
+Logs em:       ./experiments/vcip_combined_loss/logs/
+========================================
+========================================
+Experiment 1/1
+  loss_type   = combined
+  mask_type   = erp
+  swhdc_tag   = 1
+  erp_padding = 1
+  Log: ./experiments/vcip_combined_loss_busca_lambdas/logs/erp_combined_swhdc1_erp1.out
+========================================
+Finished [1/1]: mask=erp loss=combined swhdc=1 erp=1
+
+========================================
+Todos os 1 experimentos concluídos.
+Resultados em: ./experiments/vcip_combined_loss_busca_lambdas/results.csv
+Logs em:       ./experiments/vcip_combined_loss_busca_lambdas/logs/
+========================================
+========================================
+Experiment 1/1
+  loss_type   = combined
+  mask_type   = erp
+  swhdc_tag   = 1
+  erp_padding = 1
+  Log: ./experiments/vcip_combined_loss_busca_lambdas_wsssimMax/logs/erp_combined_swhdc1_erp1.out
+========================================
+Finished [1/1]: mask=erp loss=combined swhdc=1 erp=1
+
+========================================
+Todos os 1 experimentos concluídos.
+Resultados em: ./experiments/vcip_combined_loss_busca_lambdas_wsssimMax/results.csv
+Logs em:       ./experiments/vcip_combined_loss_busca_lambdas_wsssimMax/logs/
+========================================
+========================================
+Experiment 1/1
+  loss_type   = combined
+  mask_type   = erp
+  swhdc_tag   = 1
+  erp_padding = 1
+  Log: ./experiments/vcip_wssim_tunado_diegoPC/logs/erp_combined_swhdc1_erp1.out
+========================================
+Finished [1/1]: mask=erp loss=combined swhdc=1 erp=1
+
+========================================
+Todos os 1 experimentos concluídos.
+Resultados em: ./experiments/vcip_wssim_tunado_diegoPC/results.csv
+Logs em:       ./experiments/vcip_wssim_tunado_diegoPC/logs/
+========================================

@@ -13,23 +13,22 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import torchvision.transforms as transforms
-from torch import nn
-from torch.optim.lr_scheduler import CosineAnnealingLR
-from torchvision import datasets, transforms
-
 from lossy_contour_algorithm import get_border_bits
 from models.candidate_train import train_with_candidates
 from models.model import Masked_INR
+from torch import nn
+from torch.optim.lr_scheduler import CosineAnnealingLR
+from torchvision import datasets, transforms
+from utils.combined_loss import (
+    LAMBDA_DIST_DEFAULT,
+    LAMBDA_PERCEP_DEFAULT,
+    compute_combined_loss,
+)
 from utils.eval_model import (
     compute_ws_mse,
     compute_ws_psnr,
     compute_ws_ssim,
     eval_model,
-)
-from utils.combined_loss import (
-    compute_combined_loss,
-    LAMBDA_DIST_DEFAULT,
-    LAMBDA_PERCEP_DEFAULT,
 )
 
 manual_seed = 1
@@ -135,7 +134,9 @@ def train(
         # Combined WS-MSE + WS-SSIM loss (new)
         _ld = args.lambda_dist
         _lp = args.lambda_percep
-        criterion = lambda i1, i2, ld=_ld, lp=_lp: compute_combined_loss(i1, i2, ld, lp)[0]
+        criterion = lambda i1, i2, ld=_ld, lp=_lp: compute_combined_loss(
+            i1, i2, ld, lp
+        )[0]
     elif args.loss_type == "wsmse" or args.wsmse_tag == 1:
         criterion = compute_ws_mse
     else:
@@ -366,7 +367,7 @@ parser.add_argument(
     type=float,
     nargs="+",
     # default=[6.0e-4, 8.0e-4, 1.5e-3, 2.5e-3, 3.5e-3, 5.0e-3, 7.0e-3, 1.5e-2],
-    default=[6.0e-4, 8.0e-4],
+    default=[0.0038],
     metavar="LR",
     help="list of lambda weights",
 )
@@ -446,8 +447,8 @@ if args.type == "kodak":
 elif args.type == "clic":
     traing_list = range(0, 41)
 elif args.type == "other":
-    traing_list = range(0, 30)
-    # traing_list = range(0, 1)
+    # traing_list = range(0, 30)
+    traing_list = [18]  # it=23 corresponds to othim24 since index is (it + 1)
 
 
 all_psnr_list_of_lists = []
@@ -747,9 +748,9 @@ for num, lambda_rate in enumerate(args.lambda_rate_list):
                 "image_name": image_name,
                 "mask_type": args.mask_type,
                 "wsmse_tag": args.wsmse_tag,
-                "loss_type": args.loss_type if args.loss_type is not None else (
-                    "wsmse" if args.wsmse_tag == 1 else "mse"
-                ),
+                "loss_type": args.loss_type
+                if args.loss_type is not None
+                else ("wsmse" if args.wsmse_tag == 1 else "mse"),
                 "lambda_dist": args.lambda_dist,
                 "lambda_percep": args.lambda_percep,
                 "swhdc_tag": args.swhdc_tag,

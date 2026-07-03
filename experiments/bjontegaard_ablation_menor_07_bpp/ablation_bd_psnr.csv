@@ -1,0 +1,8 @@
+config,BD-Rate (%),BD-PSNR
+mask_type=erp | wsmse_tag=0 | swhdc_tag=0 | erp_padding=1,0.28,-0.0118
+mask_type=erp | wsmse_tag=0 | swhdc_tag=1 | erp_padding=1,1.37,-0.0593
+mask_type=erp | wsmse_tag=1 | swhdc_tag=0 | erp_padding=1,-5.8,0.2637
+mask_type=erp | wsmse_tag=1 | swhdc_tag=1 | erp_padding=1,-5.07,0.2304
+mask_type=full | wsmse_tag=0 | swhdc_tag=1 | erp_padding=1,1.21,-0.0528
+mask_type=full | wsmse_tag=1 | swhdc_tag=0 | erp_padding=1,-6.12,0.2633
+mask_type=full | wsmse_tag=1 | swhdc_tag=1 | erp_padding=1,-5.39,0.2311

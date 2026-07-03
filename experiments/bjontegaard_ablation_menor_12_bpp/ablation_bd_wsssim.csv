@@ -1,0 +1,8 @@
+config,BD-Rate (%),BD-WSSSIM
+mask_type=erp | wsmse_tag=0 | swhdc_tag=0 | erp_padding=1,0.46,-0.0005
+mask_type=erp | wsmse_tag=0 | swhdc_tag=1 | erp_padding=1,1.54,-0.0016
+mask_type=erp | wsmse_tag=1 | swhdc_tag=0 | erp_padding=1,-3.74,0.0038
+mask_type=erp | wsmse_tag=1 | swhdc_tag=1 | erp_padding=1,-2.95,0.003
+mask_type=full | wsmse_tag=0 | swhdc_tag=1 | erp_padding=1,1.16,-0.0012
+mask_type=full | wsmse_tag=1 | swhdc_tag=0 | erp_padding=1,-3.83,0.0039
+mask_type=full | wsmse_tag=1 | swhdc_tag=1 | erp_padding=1,-3.33,0.0034
