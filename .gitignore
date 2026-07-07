@@ -8,3 +8,5 @@ models/__pycache__/
 enc/training/__pycache__/
 enc/utils/__pycache__/
 __pycache__/
+experiments/vcip_wssim_tunado/logs/
+.python-version
