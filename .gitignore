@@ -1,9 +1,10 @@
-saved/
-.python-version
-__pycache__/
+experiments/vcip_consolidated/decoded_images/
+experiments/vcip_consolidated/decoded_images.zip
+experiments/vcip_wssim_tunado/decoded_images/
+experiments/vcip_combined_loss/decoded_images/
+experiments/02/logs/
+utils/__pycache__/
+models/__pycache__/
 enc/training/__pycache__/
 enc/utils/__pycache__/
-experiments/vcip_diego/decoded_images/
-experiments/vcip_tlts/decoded_images/
-experiments/vcip_tlts/logs/
-experiments/vcip_diego/logs/
+__pycache__/
